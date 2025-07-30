@@ -1,7 +1,7 @@
 import "./Navigation.css"
 import { GiHamburgerMenu } from "react-icons/gi"
 import { useState } from "react"
-import navLinks from "../navLinks"
+import navLinks from "../navlinks"
 
 const Navigation = () => {
   const [showMenu, setShowMenu] = useState(true) 
@@ -13,17 +13,19 @@ const Navigation = () => {
         <GiHamburgerMenu />
       </button>
     </div>
-    <div className={`${showMenu ? "nav-list show" : "nav-list hide"} `}>
-      <ul>
-        {
-          navLinks.map( (oneLink) => {
-            const {id, url, text} = oneLink
-            return <li key={id}>
-              <a href={url}>{text}</a>
-            </li>
-          })
-        }
-        </ul>
+    <div className="nav-menu">
+      <div className={`${showMenu ? "nav-list show" : "nav-list hide"} `}>
+        <ul>
+          {
+            navLinks.map( (oneLink) => {
+              const {id, url, text} = oneLink
+              return <li key={id}>
+                <a href={url}>{text}</a>
+              </li>
+            })
+          }
+          </ul>
+      </div>
     </div>
   </nav>
    

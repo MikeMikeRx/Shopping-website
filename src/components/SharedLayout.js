@@ -4,11 +4,16 @@ import { Outlet } from "react-router-dom"
 
 
 const SharedLayout = () => {
-  return <>
+  return <div className="layout">
     <Navigation />
-    <Outlet />
-    <Footer />
-  </>
+    <div className="content-wrapper">
+        <main className="main-content">
+          <Outlet />
+        </main>
+      <Footer />
+    </div>
+  </div>
+
 }
 
 export default SharedLayout

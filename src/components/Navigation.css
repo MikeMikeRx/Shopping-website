@@ -1,0 +1,10 @@
+.nav-header {
+    background-color: #0B2D59;
+    color: aliceblue;
+    text-align: center;
+    padding: 25px;
+}
+
+.nav-header button {
+    display: none;
+}
