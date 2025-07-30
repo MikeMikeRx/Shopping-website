@@ -3,3 +3,19 @@
   padding: 0px;
   box-sizing: border-box;
 }
+
+.layout {
+  display: flex;
+  height: 100vh;
+}
+
+nav {
+  width: 250px;
+  background-color: #F2F2F2;
+  border: 2px solid #0D448C;
+  padding: 20px;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  right: 0;
+}
