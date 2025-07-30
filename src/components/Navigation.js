@@ -7,8 +7,7 @@ const Navigation = () => {
   const [showMenu, setShowMenu] = useState(true) 
 
   return <nav>
-    <div className="nav-header">
-      <h1>AMAZING SHOP</h1>
+    <div className="nav-top">      
       <button onClick={ ()=> setShowMenu(!showMenu) }>
         <GiHamburgerMenu />
       </button>

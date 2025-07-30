@@ -1,10 +1,18 @@
-.nav-header {
-    background-color: #0B2D59;
-    color: aliceblue;
-    text-align: center;
-    padding: 25px;
+.nav-top button {
+    display: none;
 }
 
-.nav-header button {
-    display: none;
+.nav-menu {
+    margin-top: 60px;
+}
+
+.nav-menu ul {
+    list-style: none;    
+}
+
+.nav-menu ul a{
+    display: block;
+    margin-bottom: 15px;
+    font-size: 20px;
+    text-decoration: none;
 }
