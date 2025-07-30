@@ -19,3 +19,20 @@ nav {
   left: 0;
   right: 0;
 }
+
+.content-wrapper {
+  margin-left: 250px;
+  display: flex;
+  flex-direction: column;
+  width: calc(100%-250px);
+  height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  overflow-y: auto;
+}

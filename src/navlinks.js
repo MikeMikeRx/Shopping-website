@@ -18,6 +18,18 @@ const navLinks = [
         id:5, 
         url: "*", 
         text: "Link-5"
+    },{
+        id:6, 
+        url: "*", 
+        text: "Link-6"
+    },{
+        id:7, 
+        url: "*", 
+        text: "Link-7"
+    },{
+        id:8, 
+        url: "*", 
+        text: "Link-8"
     },
 ]
 
