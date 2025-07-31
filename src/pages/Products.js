@@ -8,11 +8,29 @@ const Products = () => {
   const [error, setError] = useState("")
 
 useEffect( () => {
+  const colRef = collection(db, "electronics")
 
-})
+  const unsubscribe = onSnapshot(
+    colRef, (snapshot) =>{
+      if(snapshot.empty) {
+        setError("No products found")        
+      } else {
+        const result = []
+        snapshot.docs.forEach( (product) =>{
+          result.push( {id: product.id, ...product.data()} )
+        })
+        console.log(result);
+        setData(result)        
+      }
+    },
+    (err) => {setError(err.message)}
+  )
+
+  return ()=> unsubscribe()
+},[])
 
   return (
-    <div>Products</div>
+    <div><p>Products ==== not complete</p></div>
   )
 }
 
