@@ -11,4 +11,10 @@
     justify-content: center;
     padding: 35px 0px;
     z-index: 1000;
+    transition: transform 0.3s ease-in-out;
+    transform: translateY(0);
+}
+
+.hide-header {
+    transform: translateY(-100%)
 }
