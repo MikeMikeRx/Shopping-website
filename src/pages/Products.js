@@ -21,7 +21,6 @@ useEffect( () => {
         snapshot.docs.forEach( (product) =>{
           result.push( {id: product.id, ...product.data()} )
         })
-        console.log(result);
         setData(result)        
       }
     },

@@ -1,30 +1,26 @@
 import "./Header.css"
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useState } from "react"
 
 const Header = () => {
   const [hide, setHide] = useState(false)
-  let lastScrollY = useRef(0)
 
-  useEffect( ()=>{
-    const mainContent = document.querySelector(".main-content")
+useEffect(() => {
+  let lastScrollY = 0;
 
-      if(!mainContent) return
-    
-      const handleScroll = () => {
-      const currentScroll = mainContent.scrollTop
-            
-      if (currentScroll > lastScrollY.current && currentScroll > 60) {
-        setHide(true)
-      } else {
-        setHide(false)
-      }
-
-      lastScrollY.current = currentScroll
+  const handleScroll = () => {
+    const currentScrollY = window.scrollY;
+    if (currentScrollY > lastScrollY && currentScrollY > 60) {
+      setHide(true);
+    } else {
+      setHide(false);
     }
+    lastScrollY = currentScrollY;
+  };
 
-    mainContent.addEventListener("scroll", handleScroll)
-    return () => mainContent.removeEventListener("scroll", handleScroll)
-  },[])
+  window.addEventListener('scroll', handleScroll);
+  return () => window.removeEventListener('scroll', handleScroll);
+}, []);
+
 
   return <header className={`header ${hide ? "hide-header" : ""}`}>
     <h1 >AMAZING SHOP</h1>
