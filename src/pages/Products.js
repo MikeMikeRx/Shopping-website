@@ -31,7 +31,7 @@ useEffect( () => {
   return ()=> unsubscribe()
 },[])
 
-  return <section>
+  return <section className="all-products">
     {error && <p>{error}</p>}
     {data.map( (oneProduct) => {
       const {id, name, category, price, description, stock} = oneProduct
