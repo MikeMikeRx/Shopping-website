@@ -2,6 +2,7 @@ import "./Products.css"
 import { db } from "../firebase/config"
 import { collection, onSnapshot } from "firebase/firestore"
 import { useState, useEffect } from "react"
+import { Link } from "react-router-dom"
 
 const Products = () => {
   const [data, setData] = useState([])
@@ -40,9 +41,8 @@ useEffect( () => {
         <p>Details: {description}</p>
         <h4>{price}$</h4>
         <p>in stock: {stock}</p>
-
+        <Link to="*">More details</Link>
         <button>Order now</button>
-
       </div>
     })}
   </section>
