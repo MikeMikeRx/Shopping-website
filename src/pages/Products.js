@@ -3,11 +3,12 @@ import { db } from "../firebase/config"
 import { collection, onSnapshot } from "firebase/firestore"
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
-import DummyImg from "../images/electronics/mob2.jpg"
+import DummyImg from "../images/electronics/tv4.jpg"
 
 const Products = () => {
   const [data, setData] = useState([])
   const [error, setError] = useState("")
+  // const [collection, setCollection] = useState()
 
 useEffect( () => {
   const colRef = collection(db, "electronics")
@@ -36,11 +37,11 @@ useEffect( () => {
       const {id, name, category, price, description, stock} = oneProduct
 
       return <div key={id} className="one-product">
-        <img src={DummyImg} alt="" />
+        <img src={DummyImg} alt="" className={category}/>
         <h2>{name}</h2>
-        <p>Category:{category}</p>
+        <p>Category: {category}</p>
         <p>Details: {description}</p>
-        <h4>{price}$</h4>
+        <h3>Price: {price}$</h3>
         <p>in stock: {stock}</p>
         <Link to="*">More details</Link>
         <button>Order now</button>

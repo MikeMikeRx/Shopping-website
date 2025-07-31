@@ -9,13 +9,45 @@
 
 .one-product {
     width: 25%;
-    border: 2px solid gold;
+    border: 2px solid #0D448C;;
     margin: 20px;
     padding: 0px 15px;
     padding-bottom: 15px;
+    align-items: center;
     text-align: center;
+    background-color: white;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .one-product img {
-    width: 180px;
+    width: 200px;
+}
+
+.one-product p {
+    margin: 10px;
+}
+
+.one-product a {
+    text-decoration: none;
+}
+
+.one-product a,
+.one-product button {
+    display: block;
+    margin: 0px auto;
+}
+
+.one-product button {
+    font-size: 20px;
+    padding: 5px;
+    margin-top: 5px;
+    background-color: #0D448C;;
+    border: none;
+    border-radius: 8px;
+    color: aliceblue;
+    cursor: pointer;
+}
+
+.one-product button:hover{
+ background-color: #0f52ab;
 }
