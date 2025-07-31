@@ -29,9 +29,23 @@ useEffect( () => {
   return ()=> unsubscribe()
 },[])
 
-  return (
-    <div><p>Products ==== not complete</p></div>
-  )
+  return <section>
+    {error && <p>{error}</p>}
+    {data.map( (oneProduct) => {
+      const {id, name, category, price, description, stock} = oneProduct
+
+      return <div key={id} className="one-product">
+        <h2>{name}</h2>
+        <p>Category:{category}</p>
+        <p>Details: {description}</p>
+        <h4>{price}$</h4>
+        <p>in stock: {stock}</p>
+
+        <button>Order now</button>
+
+      </div>
+    })}
+  </section>
 }
 
 export default Products
