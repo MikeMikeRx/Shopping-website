@@ -9,7 +9,7 @@ useEffect(() => {
 
   const handleScroll = () => {
     const currentScrollY = window.scrollY;
-    if (currentScrollY > lastScrollY && currentScrollY > 60) {
+    if (currentScrollY > lastScrollY && currentScrollY > 80) {
       setHide(true);
     } else {
       setHide(false);

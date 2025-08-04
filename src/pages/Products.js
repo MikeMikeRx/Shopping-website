@@ -3,7 +3,7 @@ import { db } from "../firebase/config"
 import { collection, onSnapshot } from "firebase/firestore"
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
-import DummyImg from "../images/electronics/tv4.jpg"
+import DummyImg from "../images/electronics/tv3.jpg"
 
 const Products = () => {
   const [data, setData] = useState([])
@@ -42,8 +42,8 @@ useEffect( () => {
         <p>Category: {category}</p>
         <p>Details: {description}</p>
         <h3>Price: {price}$</h3>
-        <p>in stock: {stock}</p>
-        <Link to="*">More details</Link>
+        <p className="in-stock">in stock: {stock}</p>
+        <Link to="*">Click here for more details</Link>
         <button>Order now</button>
       </div>
     })}

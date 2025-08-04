@@ -3,7 +3,7 @@
 }
 
 .nav-menu {
-    margin-top: 60px;
+    margin-top: 25px;
 }
 
 .nav-menu ul {
@@ -11,8 +11,9 @@
 }
 
 .nav-menu ul a{
+    color: black;
     display: block;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
     font-size: 20px;
     text-decoration: none;
 }

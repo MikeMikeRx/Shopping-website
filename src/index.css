@@ -8,6 +8,7 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  background: linear-gradient(azure,rgb(228, 228, 228),  rgb(178, 178, 221))
 }
 
 nav {
@@ -19,6 +20,7 @@ nav {
   height: 100vh;
   position: fixed;
   left: 0;
+  top: 80px;
 }
 
 .content-wrapper {
@@ -39,5 +41,5 @@ nav {
   padding-bottom: 40px;
   overflow-y: auto;
   box-sizing: border-box;
-    background-color: #dfdfdf;
+ 
 }
