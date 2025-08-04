@@ -1,27 +1,27 @@
 const navLinks = [
     {   id:1, 
-        url: "/", 
-        text: "Home", 
+        url: "*", 
+        text: "Best sellers" 
     }, 
     {   id:2, 
-        url: "products", 
-        text: "Products"
+        url: "*", 
+        text: "Hot New Realises"
     },{
         id:3, 
         url: "*", 
-        text: "Link-3"
+        text: "Most Gifted"
     },{
         id:4, 
         url: "*", 
-        text: "Link-4"
+        text: "Baby Products"
     },{
         id:5, 
         url: "*", 
-        text: "Link-5"
+        text: "Climate Pledge Friendly"
     },{
         id:6, 
         url: "*", 
-        text: "Link-6"
+        text: "Link-8"
     },{
         id:7, 
         url: "*", 

@@ -1,6 +1,7 @@
 import "./Navigation.css"
 import { GiHamburgerMenu } from "react-icons/gi"
 import { useState } from "react"
+import { NavLink } from "react-router-dom"
 import navLinks from "../navlinks"
 
 const Navigation = () => {
@@ -12,9 +13,15 @@ const Navigation = () => {
         <GiHamburgerMenu />
       </button>
     </div>
-    <div className="nav-menu">
+    <div className="menu">
       <div className={`${showMenu ? "nav-list show" : "nav-list hide"} `}>
-        <ul>
+
+        <div className="main-menu">
+          <NavLink to="/">Home</NavLink>
+          <NavLink to="products">Products</NavLink> 
+        </div>
+
+        <ul className="nav-menu">
           {
             navLinks.map( (oneLink) => {
               const {id, url, text} = oneLink
@@ -23,7 +30,7 @@ const Navigation = () => {
               </li>
             })
           }
-          </ul>
+        </ul>
       </div>
     </div>
   </nav>
