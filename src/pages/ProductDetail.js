@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom"
 import { useState, useEffect } from "react"
 import { db } from "../firebase/config"
 import { doc, getDoc } from "firebase/firestore"
+import fetchAllProducts from "../utils/fetchAllProducts"
 import DummyImg from "../images/electronics/tv3.jpg"
 
 const ProductDetail = () => {
@@ -10,28 +11,30 @@ const ProductDetail = () => {
   const [product, setProduct] = useState(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState("")
+
+  const [productX, setProductX] = useState(null)
+
   
   useEffect ( () => {
+    const fetchProductFromAll = async () => {
+      try {
+        const allProducts = await fetchAllProducts()
+        const matched = allProducts.find( (oneProduct) => oneProduct.id === productId)
 
-    const docRef = doc(db, "electronics", productId)
-    
-    const fetchProduct = async () => {
-      try{
-        const docSnap = await getDoc(docRef)
-        if (docSnap.exists()) {
-          setProduct( { id: docSnap.id, ...docSnap.data() })
+        if(matched) {
+          setProduct(matched)
           setError("")
         } else {
-          setError("No product found")
+          setError("No product found ...")
         }
-      } catch (err){
-        setError("Error fetching product details" + err.message)
+      } catch (err) {
+        setError("Error fetching product details: " + err.message)
       } finally {
         setLoading(false)
       }
     }
-    
-    fetchProduct()
+
+    fetchProductFromAll()
   },[productId])
   
   if(loading){
