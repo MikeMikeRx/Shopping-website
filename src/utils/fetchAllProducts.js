@@ -20,7 +20,6 @@ const fetchAllProducts = async () => {
     } catch(err) {
         console.log("Error.................!!!");        
     }
-
   return allProducts
 }
 

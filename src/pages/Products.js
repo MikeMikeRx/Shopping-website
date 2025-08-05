@@ -22,7 +22,8 @@ useEffect( () => {
         snapshot.docs.forEach( (product) =>{
           result.push( {id: product.id, ...product.data()} )
         })
-        setData(result)        
+        setData(result)
+        setError("")        
       }
     },
     (err) => {setError(err.message)}
