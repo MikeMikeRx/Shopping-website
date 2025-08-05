@@ -1,6 +1,5 @@
 import "./Products.css"
-import { db } from "../firebase/config"
-import { collection, onSnapshot } from "firebase/firestore"
+import fetchAllProducts from "../utils/fetchAllProducts"
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import DummyImg from "../images/electronics/tv3.jpg"
@@ -8,28 +7,19 @@ import DummyImg from "../images/electronics/tv3.jpg"
 const Products = () => {
   const [data, setData] = useState([])
   const [error, setError] = useState("")
-  // const [collection, setCollection] = useState()
 
 useEffect( () => {
-  const colRef = collection(db, "electronics")
+  const getProducts = async () => {
+    try {
+      const products = await fetchAllProducts()
+      setData(products)
+    } catch (err) {
+      setError("Failed to load products")
+      console.error(err)      
+    }         
+  }
 
-  const unsubscribe = onSnapshot(
-    colRef, (snapshot) =>{
-      if(snapshot.empty) {
-        setError("No products found")        
-      } else {
-        const result = []
-        snapshot.docs.forEach( (product) =>{
-          result.push( {id: product.id, ...product.data()} )
-        })
-        setData(result)
-        setError("")        
-      }
-    },
-    (err) => {setError(err.message)}
-  )
-
-  return ()=> unsubscribe()
+  getProducts()
 },[])
 
   return <section className="all-products">

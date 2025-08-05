@@ -1,5 +1,7 @@
 import { db } from "../firebase/config"
-import { collection, doc, getDoc } from "firebase/firestore"
+import { collection, getDocs } from "firebase/firestore"
+
+const collectionsToFetch = ["electronics", "furniture", "clothes"]
 
 const fetchAllProducts = async () => {
     const allProducts = []
