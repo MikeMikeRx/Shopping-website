@@ -40,10 +40,9 @@ useEffect( () => {
         <img src={DummyImg} alt="" className={category}/>
         <h2>{name}</h2>
         <p>Category: {category}</p>
-        <p>Details: {description}</p>
-        <h3>Price: {price}$</h3>
-        <p className="in-stock">in stock: {stock}</p>
-        <Link to="*">Click here for more details</Link>
+        <p>Rating: ****** </p>
+        <h3>Price: {price}$</h3>        
+        <Link to={`/ProductsDetail/${id}`}>Click here for more details</Link>
         <button>Order now</button>
       </div>
     })}

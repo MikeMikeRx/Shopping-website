@@ -17,8 +17,13 @@
     text-align: center;
     background-color: white;
     border-radius: 12px;
-    box-shadow: 0px 0px 10px rgb(132, 133, 133);
+    box-shadow: 25px 0px 20px rgb(132, 133, 133);
     font-family: 'Times New Roman', Times, serif;
+}
+
+.one-product:hover{
+    transform: scale(1.01);
+    transition: all 0.1s linear;
 }
 
 .one-product img {
@@ -48,7 +53,7 @@
 .one-product a,
 .one-product button {
     display: block;
-    margin: 0px auto;
+    margin: 0px auto;    
 }
 
 .one-product button {
@@ -60,6 +65,7 @@
     border-radius: 8px;
     color: aliceblue;
     cursor: pointer;
+    box-shadow: 0px 0px 10px gray;
 }
 
 .one-product button:hover{
