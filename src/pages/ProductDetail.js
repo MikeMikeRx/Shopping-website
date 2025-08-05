@@ -32,11 +32,15 @@ const ProductDetail = () => {
     }
     
     fetchProduct()
-  },[productId]) 
+  },[productId])
+  
+  if(loading){
+    return <div>Loading product details...</div>
+  }
 
-
-
-
+  if(error) {
+    return <div>Error: {error}</div>
+  }
 
 
 
