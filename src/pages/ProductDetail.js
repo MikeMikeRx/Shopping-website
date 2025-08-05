@@ -1,8 +1,6 @@
 import "./ProductDetail.css"
 import { useParams } from "react-router-dom"
 import { useState, useEffect } from "react"
-import { db } from "../firebase/config"
-import { doc, getDoc } from "firebase/firestore"
 import fetchAllProducts from "../utils/fetchAllProducts"
 import DummyImg from "../images/electronics/tv3.jpg"
 
@@ -11,8 +9,6 @@ const ProductDetail = () => {
   const [product, setProduct] = useState(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState("")
-
-  const [productX, setProductX] = useState(null)
 
   
   useEffect ( () => {
@@ -44,7 +40,6 @@ const ProductDetail = () => {
   if(error) {
     return <div className="error">Error: {error}</div>
   }
-
 
   return (
     <section className="product-detail">
