@@ -16,7 +16,7 @@ const fetchAllProducts = async () => {
                     category: col,
                 })
             })
-        }
+        } 
     } catch(err) {
         console.log("Error.................!!!");        
     }

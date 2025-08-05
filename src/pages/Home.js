@@ -1,16 +1,16 @@
 import "./Home.css"
 
 const Home = () => {
-  return <div>
-    <section className="home-sec-1">
+  return <div className="home-page-container">
+    <section className="home-section">
       <p>Category1 + Category2 + Category3 with imgs,links</p>    
     </section>
 
-    <section className="home-sec-2">
+    <section className="home-section">
       <p>slider with pictures</p>
     </section>
 
-    <section className="home-sec-3">
+    <section className="home-section">
       <p>img - text - img </p>
     </section>
   </div>

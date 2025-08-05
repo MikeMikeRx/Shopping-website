@@ -42,3 +42,20 @@ nav {
   overflow-y: auto;
   box-sizing: border-box; 
 }
+
+.home-page-container {
+  display: flex;
+  flex-direction: column;
+  gap:40px;
+  width:100%;
+  box-sizing: border-box;
+}
+
+.home-section {
+  display: flex;
+  flex-direction: column;
+  background-color: #F2F2F2;
+  border-radius: 15px;
+  box-shadow: 0px;
+  padding: 30px;
+}
