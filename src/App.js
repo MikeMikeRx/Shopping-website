@@ -9,7 +9,7 @@ const App = () => {
     <Routes>
       <Route path="/" element={ <SharedLayout /> }>
         <Route index element={ <Home /> }/>
-        <Route path="Products" element={ <Products /> }/>
+        <Route path="products" element={ <Products /> }/>
         <Route path="productdetail/:productId" element={ <ProductDetail />}/>
       </Route>
     </Routes>  
