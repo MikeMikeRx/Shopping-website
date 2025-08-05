@@ -34,7 +34,7 @@ useEffect( () => {
   return <section className="all-products">
     {error && <p>{error}</p>}
     {data.map( (oneProduct) => {
-      const {id, name, category, price, description, stock} = oneProduct
+      const {id, name, category, price} = oneProduct
 
       return <div key={id} className="one-product">
         <img src={DummyImg} alt="" className={category}/>
@@ -42,7 +42,7 @@ useEffect( () => {
         <p>Category: {category}</p>
         <p>Rating: ****** </p>
         <h3>Price: {price}$</h3>        
-        <Link to={`/ProductsDetail/${id}`}>Click here for more details</Link>
+        <Link to={`/productdetail/${id}`}>Click here for more details</Link>
         <button>Order now</button>
       </div>
     })}

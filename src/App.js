@@ -10,7 +10,7 @@ const App = () => {
       <Route path="/" element={ <SharedLayout /> }>
         <Route index element={ <Home /> }/>
         <Route path="Products" element={ <Products /> }/>
-        <Route path="ProductDetail/:productID" element={ <ProductDetail />}/>
+        <Route path="productdetail/:productId" element={ <ProductDetail />}/>
       </Route>
     </Routes>  
   </BrowserRouter>

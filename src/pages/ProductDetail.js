@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom"
 import { useState, useEffect } from "react"
 import { db } from "../firebase/config"
 import { doc, getDoc } from "firebase/firestore"
+import DummyImg from "../images/electronics/tv3.jpg"
 
 const ProductDetail = () => {
   const { productId } = useParams()
@@ -11,7 +12,6 @@ const ProductDetail = () => {
   const [error, setError] = useState("")
   
   useEffect ( () => {
-    if (!product) return
 
     const docRef = doc(db, "electronics", productId)
     
@@ -35,17 +35,29 @@ const ProductDetail = () => {
   },[productId])
   
   if(loading){
-    return <div>Loading product details...</div>
+    return <div className="loading">Loading product details...</div>
   }
 
   if(error) {
-    return <div>Error: {error}</div>
+    return <div className="error">Error: {error}</div>
   }
 
 
-
   return (
-    <div>ProductDetail</div>
+    <section className="product-detail">
+      {error && <p>{error}</p>}
+      {product && (
+        <div key={product.id}>
+          <img src={DummyImg} alt="" />
+          <h2>{product.name}</h2>
+          <p>Category: {product.category}</p>
+          <p>{product.description}</p>
+          <p>Our price: {product.price}$</p>
+          <p>Currently in stock: {product.stock}</p>
+          <button>Order now</button>
+        </div>
+      )}
+    </section>
   )
 }
 
