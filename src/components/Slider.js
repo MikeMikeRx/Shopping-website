@@ -16,6 +16,7 @@ const Slider = () => {
   const [allProducts, setAllProducts] = useState([])
   const [history, setHistory] = useState([])
   const [currentIndex, setCurrentIndex] = useState(0)
+  const [animation, setAnimation] = useState("slide-in")
   
   useEffect(() => {
     const loadProducts = async () => {
@@ -53,7 +54,10 @@ const Slider = () => {
 
 
   const handleNext = () => {
-    if (currentIndex < history.length -1) {
+    setAnimation("slide-left")
+
+    setTimeout(() => {
+      if (currentIndex < history.length -1) {
       setCurrentIndex(currentIndex + 1)
     } else {
       // Generate new set and push to the history
@@ -61,11 +65,20 @@ const Slider = () => {
       setHistory([...history, newSet])
       setCurrentIndex(history.length) //Point to the new one
     }
+
+    setAnimation("slide-in")
+    }, 300) //Delay for exit animation
   }
 
   const handlePrev = () => {
     if(currentIndex > 0){
-      setCurrentIndex(currentIndex - 1)
+      setAnimation("slide-right")
+
+
+      setTimeout(() => {
+        setCurrentIndex(currentIndex - 1)
+        setAnimation("slide-in")
+      }, 300)      
     }
   }
 
@@ -76,15 +89,17 @@ const Slider = () => {
     <div className="product-slider">
       <div className="slider-row">
         <button className="slider-btn" onClick={handlePrev}>< IoIosArrowBack /></button>
-                  
-        {visibleProducts.map((product) =>(
-          <div key={product.id} className="product-card">
-            <Link to={`/productdetail/${product.id}`}>
-              <img src={DummyImg} alt="" />
-              <h5>{product.name}</h5>
-            </Link>
-          </div>
-        ))}
+
+        <div className={`product-cards-wrapper ${animation}`}>                 
+          {visibleProducts.map((product) =>(
+            <div key={product.id} className="product-card">
+              <Link to={`/productdetail/${product.id}`}>
+                <img src={DummyImg} alt="" />
+                <h5>{product.name}</h5>
+              </Link>
+            </div>
+          ))}
+        </div> 
 
         <button className="slider-btn" onClick={handleNext}>< IoIosArrowForward /></button>
 

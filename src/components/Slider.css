@@ -1,13 +1,17 @@
 .product-slider {
-    width: 100%;
-    overflow: hidden;
+    width: 100%;    
 }
 
 .slider-row {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 2px;
+    position: relative;
+    overflow: hidden;
+}
+
+.product-cards-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
 }
 
 .slider-btn{    
@@ -23,13 +27,26 @@
 }
 
 .product-card {
-    flex: 0 0 160px;
-    border-radius: 28px;
-    border: 2px solid purple;
+    min-width: 200px;
     margin: 0;
 }
 
 
 .product-card img {
     width: 190px;
+}
+
+.slide-left {
+    transform: translateX(-100%);
+    opacity: 0;
+}
+
+.slider-right {
+    transform: translateX(100%);
+    opacity: 1;
+}
+
+.slide-in {
+    transform: translateX(0%);
+    opacity: 1;
 }
