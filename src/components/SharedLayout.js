@@ -23,7 +23,7 @@ const SharedLayout = () => {
       />
       <div className="content-wrapper">
         <main className="main-content">
-          <Outlet />
+          <Outlet context={{ selectedCategories}}/>
         </main>
       </div>      
     </div>

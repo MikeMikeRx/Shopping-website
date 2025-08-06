@@ -21,14 +21,19 @@ useEffect( () => {
     }         
   }
   getProducts()
-},[])
+}, [])
 
-  return <section className="all-products">
-    {error && <p>{error}</p>}
-    {data.map( (oneProduct) => {
+const filteredData = selectedCategories.length > 0
+  ? data.filter(product => selectedCategories.includes(product.category))
+  : data
+
+  return ( 
+  <section className="all-products">
+    {filteredData.map((oneProduct) => {
       const {id, name, category, price} = oneProduct
-
-      return <div key={id} className="one-product">
+    
+      return (
+      <div key={id} className="one-product">
         <img src={DummyImg} alt="" className={category}/>
         <h2>{name}</h2>
         <p>Category: {category}</p>
@@ -37,8 +42,10 @@ useEffect( () => {
         <Link to={`/productdetail/${id}`}>Click here for more details</Link>
         <button>Order now</button>
       </div>
+      )
     })}
   </section>
+  )
 }
 
 export default Products
