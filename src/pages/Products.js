@@ -29,7 +29,7 @@ const filteredData = selectedCategories.length > 0
 
   return ( 
   <section className="all-products">
-    {error & <div className="error-message">{error}</div>}
+    {error && <div className="error-message">{error}</div>}
     {filteredData.map((oneProduct) => {
       const {id, name, category, price} = oneProduct
     
