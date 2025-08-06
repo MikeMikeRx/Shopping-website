@@ -5,7 +5,12 @@ import { NavLink } from "react-router-dom"
 import navLinks from "../navlinks"
 
 const Navigation = () => {
-  const [showMenu, setShowMenu] = useState(true) 
+  const [showMenu, setShowMenu] = useState(true)
+  const [electronicsChecked, setElectronicsChecked] = useState(false)
+  const [clothesChecked, setClothesChecked] = useState(false)
+  const [furnitureChecked, setFurnitureChecked] = useState(false)
+
+
 
   return <nav>
     <div className="nav-top">      
@@ -20,6 +25,38 @@ const Navigation = () => {
           <NavLink to="/">Home</NavLink>
           <NavLink to="products">Products</NavLink> 
         </div>
+
+        <div className="checkbox-container">
+          <h2>Filter:</h2>
+            <input 
+            type="checkbox" 
+            id="checkbox"
+            name="electronics" 
+            checked={electronicsChecked}
+            onChange={ (e) => setElectronicsChecked(e.target.checked) }
+            />
+            <label htmlFor="filter">Eletronics</label>
+
+            <input 
+            type="checkbox" 
+            id="checkbox"
+            name="clothes" 
+            checked={clothesChecked}
+            onChange={ (e) => setClothesChecked(e.target.checked) }
+            />
+            <label htmlFor="filter">Clothes</label>
+
+            <input 
+            type="checkbox" 
+            id="checkbox"
+            name="furniture" 
+            checked={furnitureChecked}
+            onChange={ (e) => setFurnitureChecked(e.target.checked) }
+            />
+            <label htmlFor="filter">Furniture</label>            
+        </div>
+
+
 
         <ul className="nav-menu">
           {
