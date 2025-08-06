@@ -1,4 +1,5 @@
 import "./Home.css"
+import Slider from "../components/Slider"
 
 const Home = () => {
   return <div className="home-page-container">
@@ -7,7 +8,7 @@ const Home = () => {
     </section>
 
     <section className="home-section">
-      <p>slider with pictures</p>
+      <Slider />
     </section>
 
     <section className="home-section">

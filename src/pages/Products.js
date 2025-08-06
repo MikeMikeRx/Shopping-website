@@ -3,7 +3,7 @@ import fetchAllProducts from "../utils/fetchAllProducts"
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import { useOutletContext } from "react-router-dom"
-import DummyImg from "../images/electronics/tv3.jpg"
+import DummyImg from "../images/furniture/fur8.jpg"
 
 const Products = () => {
   const { selectedCategories } = useOutletContext()
@@ -29,6 +29,7 @@ const filteredData = selectedCategories.length > 0
 
   return ( 
   <section className="all-products">
+    {error & <div className="error-message">{error}</div>}
     {filteredData.map((oneProduct) => {
       const {id, name, category, price} = oneProduct
     
