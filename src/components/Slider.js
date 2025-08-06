@@ -3,6 +3,7 @@ import fetchAllProducts from "../utils/fetchAllProducts"
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import DummyImg from "../images/electronics/mob2.jpg"
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io"
 
 
 const Slider = () => {
