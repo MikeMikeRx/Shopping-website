@@ -2,13 +2,25 @@ import Header from "./Header"
 import Navigation from "./Navigation"
 import Footer from "./Footer"
 import { Outlet } from "react-router-dom"
+import { useState } from "react"
 
 
 const SharedLayout = () => {
+  const [selectedCategories, setSelecetedCategories] = useState([])
+
+  const handleCategoryChange = (category, checked) =>{
+    setSelecetedCategories(prev => checked
+      ? [...prev, category] : prev.filter(item => item !== category)
+    )
+  }
+
   return <div className="layout">
     <Header />
     <div className="main-body-content">
-      <Navigation />
+      <Navigation 
+      selectedCategories={selectedCategories}
+      onCategoryChange={handleCategoryChange}
+      />
       <div className="content-wrapper">
         <main className="main-content">
           <Outlet />
