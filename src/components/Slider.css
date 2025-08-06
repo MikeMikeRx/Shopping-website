@@ -1,0 +1,19 @@
+.slider-container {
+    overflow-x: auto;
+}
+
+.slider {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.slide {
+    flex: 0 0 auto;
+}
+
+.slide img {
+    width: 200px;
+    height: auto;
+    border-radius: 8px;
+}

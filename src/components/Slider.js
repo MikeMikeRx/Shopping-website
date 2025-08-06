@@ -21,7 +21,6 @@ const Slider = () => {
 
   return (
     <section className="slider-container">
-      <h2>Products</h2>
       <div className="slider">
         {products.map((product) => (
           <div key={product.id} className="slide">
