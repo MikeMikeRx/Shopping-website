@@ -4,12 +4,13 @@ import { useState } from "react"
 import { NavLink } from "react-router-dom"
 import navLinks from "../navlinks"
 
-const Navigation = () => {
+const Navigation = ({ selectedCategories, onCategoryChange }) => {
   const [showMenu, setShowMenu] = useState(true)
-  const [electronicsChecked, setElectronicsChecked] = useState(false)
-  const [clothesChecked, setClothesChecked] = useState(false)
-  const [furnitureChecked, setFurnitureChecked] = useState(false)
 
+  const handleChange = (e) => {
+    const { name, checked } = e.target
+    onCategoryChange(name, checked)
+  }
 
 
   return <nav>
@@ -28,35 +29,21 @@ const Navigation = () => {
 
         <div className="checkbox-container">
           <h2>Filter:</h2>
-            <input 
-            type="checkbox" 
-            id="checkbox"
-            name="electronics" 
-            checked={electronicsChecked}
-            onChange={ (e) => setElectronicsChecked(e.target.checked) }
-            />
-            <label htmlFor="filter">Eletronics</label>
 
-            <input 
-            type="checkbox" 
-            id="checkbox"
-            name="clothes" 
-            checked={clothesChecked}
-            onChange={ (e) => setClothesChecked(e.target.checked) }
-            />
-            <label htmlFor="filter">Clothes</label>
-
-            <input 
-            type="checkbox" 
-            id="checkbox"
-            name="furniture" 
-            checked={furnitureChecked}
-            onChange={ (e) => setFurnitureChecked(e.target.checked) }
-            />
-            <label htmlFor="filter">Furniture</label>            
+          {["electronics", "clothes", "furniture"].map((category) => (
+            <div key={category}>
+              <input 
+              type="checkbox"
+              name={category}
+              id={`filter-${category}`}
+              checked={selectedCategories.includes(category)}
+              onChange={handleChange}
+              />
+              <label htmlFor={`filter-${category}`}>{category[0].toUpperCase() + category.slice(1)}              
+              </label>
+            </div>
+          ))}
         </div>
-
-
 
         <ul className="nav-menu">
           {
