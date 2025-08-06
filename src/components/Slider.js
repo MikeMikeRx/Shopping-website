@@ -1,8 +1,8 @@
 import "./Slider.css"
-import { db } from "../firebase/config"
-import { doc, getDoc } from "firebase/firestore"
-import { useState } from "react"
-
+import fetchAllProducts from "../utils/fetchAllProducts"
+import { useState, useEffect } from "react"
+import { Link } from "react-router-dom"
+import DummyImg from "../images/electronics/tv3.jpg"
 
 
 const Slider = () => {
