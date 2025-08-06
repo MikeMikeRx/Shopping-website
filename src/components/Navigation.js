@@ -2,16 +2,19 @@ import "./Navigation.css"
 import { GiHamburgerMenu } from "react-icons/gi"
 import { useState } from "react"
 import { NavLink } from "react-router-dom"
+import { useLocation } from "react-router-dom"
 import navLinks from "../navlinks"
 
 const Navigation = ({ selectedCategories, onCategoryChange }) => {
   const [showMenu, setShowMenu] = useState(true)
+  const location = useLocation()
+
+  const isProductsPage = location.pathname === "/products"
 
   const handleChange = (e) => {
     const { name, checked } = e.target
     onCategoryChange(name, checked)
   }
-
 
   return <nav>
     <div className="nav-top">      
@@ -24,9 +27,10 @@ const Navigation = ({ selectedCategories, onCategoryChange }) => {
 
         <div className="main-menu">
           <NavLink to="/">Home</NavLink>
-          <NavLink to="products">Products</NavLink> 
+          <NavLink to="products" className={({ isActive }) => isActive ? "active" : ""}>Products</NavLink> 
         </div>
 
+      {isProductsPage && (
         <div className="checkbox-container">
           <h2>Filter:</h2>
 
@@ -45,6 +49,7 @@ const Navigation = ({ selectedCategories, onCategoryChange }) => {
             </div>
           ))}
         </div>
+      )}
 
         <ul className="nav-menu">
           {

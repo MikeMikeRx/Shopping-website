@@ -17,7 +17,6 @@
 
 .checkbox-container{
     margin-top: 15px;
-    border: 1px solid rgb(255, 0, 0);
 }
 
 .checkbox-container h2{
@@ -31,6 +30,10 @@
     margin-right: 5px;
     width: 18px;
     height: 18px;
+}
+
+.nav-list .active + .checkbox-container {
+    display: block;
 }
 
 .nav-menu {
