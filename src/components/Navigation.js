@@ -32,7 +32,8 @@ const Navigation = ({ selectedCategories, onCategoryChange }) => {
 
           {["electronics", "clothes", "furniture"].map((category) => (
             <div key={category}>
-              <input 
+              <input
+              className="checkbox" 
               type="checkbox"
               name={category}
               id={`filter-${category}`}
