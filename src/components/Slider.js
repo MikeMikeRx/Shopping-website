@@ -8,6 +8,8 @@ import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io"
 
 const Slider = () => {
   const [products, setProducts] = useState([])
+  const [startIndex, setStartIndex] = useState(0)
+  const visibleCount = 6
 
   useEffect(() => {
     const loadProducts = async () => {
@@ -20,18 +22,37 @@ const Slider = () => {
     loadProducts()
   }, [])
 
+  const next = () => {
+    setStartIndex((prev) =>
+      prev + visibleCount >= products.length ? 0 : prev + visibleCount
+    )
+  }
+
+  const prev = () => {
+    setStartIndex((prev) => 
+      prev - visibleCount > 0 ? products.length - visibleCount : prev - visibleCount
+    )
+  }
+
+  const visibleProducts = products. slice(startIndex, startIndex + visibleCount)
+
+
   return (
-    <section className="slider-container">
-      <div className="slider">
-        {products.map((product) => (
-          <div key={product.id} className="slide">
+    <div className="product-slider">
+      <div className="slider-controls">
+        <button onClick={prev}>< IoIosArrowBack /></button>
+        <button onClick={next}>< IoIosArrowForward /></button>
+      </div>
+      <div className="slider-track">
+        {visibleProducts.map((product) =>(
+          <div key={product.id} className="product-card">
             <Link to={`/productdetail/${product.id}`}>
-              <img src={DummyImg} alt={product.category} />
+              <img src={DummyImg} alt="" />
             </Link>
           </div>
         ))}
       </div>
-    </section>
+    </div>
   )
 }
 
