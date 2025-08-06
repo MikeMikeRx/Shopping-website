@@ -39,11 +39,9 @@ const Slider = () => {
 
   return (
     <div className="product-slider">
-      <div className="slider-controls">
-        <button onClick={prev}>< IoIosArrowBack /></button>
-        <button onClick={next}>< IoIosArrowForward /></button>
-      </div>
-      <div className="slider-track">
+      <div className="slider-row">
+        <button className="slider-btn" onClick={prev}>< IoIosArrowBack /></button>
+                  
         {visibleProducts.map((product) =>(
           <div key={product.id} className="product-card">
             <Link to={`/productdetail/${product.id}`}>
@@ -51,6 +49,9 @@ const Slider = () => {
             </Link>
           </div>
         ))}
+
+        <button className="slider-btn" onClick={next}>< IoIosArrowForward /></button>
+
       </div>
     </div>
   )
