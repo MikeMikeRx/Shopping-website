@@ -6,9 +6,20 @@ import { useOutletContext, useLocation } from "react-router-dom"
 import DummyImg from "../images/furniture/fur8.jpg"
 
 const Products = () => {
-  const { selectedCategories } = useOutletContext()
+  const { selectedCategories, setSelectedCategories } = useOutletContext()
   const [data, setData] = useState([])
   const [error, setError] = useState("")
+  const location = useLocation()
+
+useEffect(() => {
+  const params = new URLSearchParams(location.search)
+  const categoryFromQuery = params.get("category")
+
+  if (categoryFromQuery) {
+    setSelectedCategories([categoryFromQuery])
+  }
+}, [location.search, setSelectedCategories])
+
 
 useEffect( () => {
   const getProducts = async () => {

@@ -6,10 +6,10 @@ import { useState } from "react"
 
 
 const SharedLayout = () => {
-  const [selectedCategories, setSelecetedCategories] = useState([])
+  const [selectedCategories, setSelectedCategories] = useState([])
 
   const handleCategoryChange = (category, checked) =>{
-    setSelecetedCategories(prev => checked
+    setSelectedCategories(prev => checked
       ? [...prev, category] : prev.filter(item => item !== category)
     )
   }
@@ -23,7 +23,7 @@ const SharedLayout = () => {
       />
       <div className="content-wrapper">
         <main className="main-content">
-          <Outlet context={{ selectedCategories}}/>
+          <Outlet context={{ selectedCategories, setSelectedCategories }}/>
         </main>
       </div>      
     </div>
