@@ -10,6 +10,9 @@ const Products = () => {
   const { selectedCategories, setSelectedCategories } = useOutletContext()
   const [data, setData] = useState([])
   const [error, setError] = useState("")
+
+const [searchTerm,setSearchTerm] = useState("")
+
   const location = useLocation()
 
 useEffect(() => {
@@ -35,15 +38,22 @@ useEffect( () => {
   getProducts()
 }, [])
 
-const filteredData = selectedCategories.length > 0
-  ? data.filter(product => selectedCategories.includes(product.category))
-  : data
+
+  const filteredData = data.filter(product => 
+    selectedCategories.length > 0
+    ? selectedCategories.includes(product.category)
+    : true
+  )
+  .filter(product => product.name.toLowerCase().includes(searchTerm.toLowerCase())
+  )
+
 
   return ( 
   <section className="all-products">
+    <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
     {error && <div className="error-message">{error}</div>}
     {filteredData.map((oneProduct) => {
-      const {id, name, category, price} = oneProduct
+      const { id, name, category, price } = oneProduct
     
       return (
       <div key={id} className="one-product">
