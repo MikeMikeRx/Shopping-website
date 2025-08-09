@@ -1,6 +1,8 @@
 import "./Home.css"
-import Slider from "../components/Slider"
 import CatBar from "../components/CatBar"
+import Slider from "../components/Slider"
+import BotBar from "../components/BotBar"
+
 
 const Home = () => {
   return <div className="home-page-container">
@@ -13,7 +15,7 @@ const Home = () => {
     </section>
 
     <section className="home-section">
-      <p>img - text - img </p>
+      <BotBar />
     </section>
   </div>
 }
