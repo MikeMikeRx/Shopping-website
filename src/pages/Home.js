@@ -1,7 +1,7 @@
 import "./Home.css"
-import CatBar from "../components/CatBar"
-import Slider from "../components/Slider"
-import BotBar from "../components/BotBar"
+import CatBar from "../components/Home/CatBar"
+import Slider from "../components/Home/Slider"
+import BotBar from "../components/Home/BotBar"
 
 
 const Home = () => {
