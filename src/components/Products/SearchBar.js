@@ -1,6 +1,6 @@
-import ".SearchBar.css"
+import "./SearchBar.css"
 
-const SearchBar = ({ searchTerm, setSearchTerm}) => {
+const SearchBar = ({ searchTerm, setSearchTerm }) => {
   return (
     <div className="search-bar">
         <input type="text" 
