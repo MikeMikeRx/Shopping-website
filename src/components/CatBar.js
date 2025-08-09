@@ -1,8 +1,9 @@
 import "./CatBar.css"
+import { Link } from "react-router-dom"
 
 const CatBar = () => {
   return (
-    <div>CatBar</div>
+    <Link to="products?category=furniture">AAA</Link>
   )
 }
 
