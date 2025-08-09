@@ -4,6 +4,7 @@
     padding: 5px;
     background-color: transparent;
     align-items: stretch;
+    overflow: hidden;
 }
 
 .bottom-bar > div {
