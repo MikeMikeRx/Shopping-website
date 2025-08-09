@@ -1,10 +1,11 @@
 import "./Home.css"
 import Slider from "../components/Slider"
+import CatBar from "../components/CatBar"
 
 const Home = () => {
   return <div className="home-page-container">
     <section className="home-section">
-      <p>Category1 + Category2 + Category3 with imgs,links</p>    
+      <CatBar/>    
     </section>
 
     <section className="home-section">
