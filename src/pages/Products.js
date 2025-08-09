@@ -2,7 +2,7 @@ import "./Products.css"
 import fetchAllProducts from "../utils/fetchAllProducts"
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
-import { useOutletContext } from "react-router-dom"
+import { useOutletContext, useLocation } from "react-router-dom"
 import DummyImg from "../images/furniture/fur8.jpg"
 
 const Products = () => {
