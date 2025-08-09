@@ -11,11 +11,11 @@ const BotBar = () => {
   return (
     <section className="bottom-bar">
         <div className="sec-1">
-            <Link>
+            <Link className="img-1">
                 <img src={img4} alt="" />
             </Link>
             <p>Our sellers guarantee top quality and trusted brands. Enjoy great prices, exclusive deals, and reliable service. Shop confidently with us!</p>
-            <Link>
+            <Link className="img-2">
                 <img src={img2} alt="" />
             </Link>
         </div>
