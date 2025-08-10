@@ -1,8 +1,12 @@
 import "./Header.css"
 import { useEffect, useState } from "react"
 import { useLocation } from "react-router-dom"
+import { GiHamburgerMenu } from "react-icons/gi"
 
 const Header = () => {
+
+  const [showMenu, setShowMenu] = useState(false)
+
   const [hide, setHide] = useState(false)
   const location = useLocation()
 
@@ -28,7 +32,15 @@ useEffect(() => {
 
 
   return <header className={`header ${hide ? "hide-header" : ""}`}>
-    <h1 >AMAZING SHOP</h1>
+      
+      <button className="button" onClick={ ()=> setShowMenu(!showMenu) }>
+        <GiHamburgerMenu />
+      </button>
+    
+        <h1 >AMAZING SHOP</h1>
+        <div className="nav-button">
+
+    </div>
   </header>
     
 }

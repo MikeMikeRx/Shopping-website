@@ -33,6 +33,7 @@ nav {
   margin-bottom: 40px;
 }
 
+
 .main-content {
   flex: 1;
   display: flex;
@@ -61,4 +62,28 @@ nav {
   padding: 5px;
 
   /* border: 3px solid rgb(253, 0, 0); */
+}
+
+
+@media(max-width: 1300px){
+  nav {
+
+    display: none; 
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100%;
+    background-color: #F2F2F2;
+    border: 4px solid #0D448C;
+    padding-left: 30px;
+    padding-top: 40px;
+    margin-bottom: 0; 
+    z-index: 1000;
+  }
+
+    nav.nav-visible {
+    display: block; 
+  }
+
 }

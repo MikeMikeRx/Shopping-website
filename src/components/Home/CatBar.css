@@ -20,11 +20,12 @@
     transform: scale(1.05);
 }
 
-@media(max-width: 1540px) {
 
-    .categories-section img{
+
+@media(max-width: 1300px) {
+     .categories-section img{
     flex: 1 1 33.333% - 15px;
-    height: clamp(265px, 2vw, 400px);
+    height: clamp(245px, 2vw, 300px);
     }
 }
 

@@ -1,12 +1,10 @@
 import "./Navigation.css"
-import { GiHamburgerMenu } from "react-icons/gi"
-import { useState } from "react"
 import { NavLink } from "react-router-dom"
 import { useLocation } from "react-router-dom"
 import navLinks from "../navlinks"
 
 const Navigation = ({ selectedCategories, onCategoryChange }) => {
-  const [showMenu, setShowMenu] = useState(false)
+
   const location = useLocation()
 
   const isProductsPage = location.pathname === "/products"
@@ -17,14 +15,7 @@ const Navigation = ({ selectedCategories, onCategoryChange }) => {
   }
 
   return <nav>
-    <div className="nav-top">      
-      <button onClick={ ()=> setShowMenu(!showMenu) }>
-        <GiHamburgerMenu />
-      </button>
-    </div>
     <div className="menu">
-      <div className={`${showMenu ? "nav-list show" : "nav-list hide"} `}>
-
         <div className="main-menu">
           <NavLink to="/">Home</NavLink>
           <NavLink to="products" className={({ isActive }) => isActive ? "active" : ""}>Products</NavLink> 
@@ -61,8 +52,7 @@ const Navigation = ({ selectedCategories, onCategoryChange }) => {
             })
           }
         </ul>
-      </div>
-    </div>
+    </div>    
   </nav>
    
 }
