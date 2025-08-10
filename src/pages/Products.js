@@ -4,7 +4,6 @@ import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import { useOutletContext, useLocation } from "react-router-dom"
 import SearchBar from "../components/Products/SearchBar"
-import productImages from "../images/productImages"
 
 import DummyImg from "../images/furniture/fur8.jpg"
 
