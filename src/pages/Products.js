@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import { useOutletContext, useLocation } from "react-router-dom"
 import SearchBar from "../components/Products/SearchBar"
+import productImages from "../images/productImages"
 
 import DummyImg from "../images/furniture/fur8.jpg"
 
@@ -54,11 +55,15 @@ useEffect( () => {
     <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
     {error && <div className="error-message">{error}</div>}
     {filteredData.map((oneProduct) => {
-      const { id, name, category, price,type } = oneProduct
+      const { id, name, category, price,type, img } = oneProduct
     
       return (
       <div key={id} className="one-product">
-        <img src={DummyImg} alt="" className={category}/>
+        <img 
+        src={productImages[img]} 
+        alt={name} 
+        className={category}
+        />
         <h2>{name}</h2>
         <p>Category: {type}</p>
         <p>Rating: ****** </p>
