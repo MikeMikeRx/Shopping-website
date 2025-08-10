@@ -47,12 +47,10 @@ const ProductDetail = () => {
       {error && <p>{error}</p>}
       {product && (
         <div key={product.id}>
-
-
-          <img src={DummyImg} alt="" />
-
-
-          
+          <img 
+          src={productImages[product.img] || DummyImg} 
+          alt={product.name} 
+          />
           <div className="text">
           <h2>{product.name}</h2>          
           <p className="description">{product.description}</p>
