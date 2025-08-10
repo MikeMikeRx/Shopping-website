@@ -54,13 +54,13 @@ useEffect( () => {
     <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
     {error && <div className="error-message">{error}</div>}
     {filteredData.map((oneProduct) => {
-      const { id, name, category, price } = oneProduct
+      const { id, name, category, price,type } = oneProduct
     
       return (
       <div key={id} className="one-product">
         <img src={DummyImg} alt="" className={category}/>
         <h2>{name}</h2>
-        <p>Category: {category}</p>
+        <p>Category: {type}</p>
         <p>Rating: ****** </p>
         <h3>Price: {price}$</h3>        
         <Link to={`/productdetail/${id}`}>Click here for more details</Link>

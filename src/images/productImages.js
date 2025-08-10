@@ -17,17 +17,17 @@ import bag1 from "./clothes/cloth2.jpg"
 
 const productImages = {
   electronics: {
-    "Smart Tv": { tv1, tv2, tv3, tv4 },
-    laptops: { lap1, lap2, lap3, lap4 },
-    "Smart Phones": { phone1, phone2 }
+    "Smart Tv": [tv1, tv2, tv3, tv4],
+    "Laptop": [lap1, lap2, lap3, lap4],
+    "Smartphone": [phone1, phone2]
   },
   furniture: {
-    Chair: { chair1 },
-    Table: { table1 }
+    "Chair": [chair1],
+    "Table": [table1]
   },
   clothes: {
-    Jacket: { jac1 },
-    Bag: { bag1 }
+    "Jacket": [jac1],
+    "Bag": [bag1]
   }
 }
 
