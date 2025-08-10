@@ -48,7 +48,7 @@ const Slider = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       handleNext()
-    }, 3000)
+    }, 5000)
 
     return () => clearInterval(interval)
   }, [history, currentIndex, allProducts])
@@ -88,6 +88,7 @@ const Slider = () => {
 
   return (
     <div className="product-slider">
+      <h2>Picked for you...</h2>
       <div className="slider-row">
         <button className="slider-btn" onClick={handlePrev}>< IoIosArrowBack /></button>
 

@@ -3,6 +3,11 @@
     overflow: hidden;    
 }
 
+.product-slider h2{
+    margin-left: 40px;
+    margin-bottom: 10px;
+}
+
 .slider-row {
     display: flex;
     align-items: center;
@@ -32,6 +37,11 @@
     min-width: calc(100%/ 6);
     padding: 5px;
     box-sizing: border-box;
+    transition: all 0.2s linear;
+}
+
+.product-card:hover{
+    transform: scale(1.05)
 }
 
 
