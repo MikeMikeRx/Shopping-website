@@ -7,7 +7,7 @@ import lap2 from "./electronics/laptop2.jpg"
 import lap3 from "./electronics/laptop3.jpg"
 import lap4 from "./electronics/laptop4.jpg"
 import phone1 from "./electronics/mob1.jpg"
-import phone2 from "./electronics/mob2.jpg"
+
 
 
 const productImages =  {
@@ -23,8 +23,7 @@ const productImages =  {
             lap3,
             lap4,
         }, smartPhones: {
-            phone1,
-            phone2,
+            phone1,            
         }
     },    
 }
