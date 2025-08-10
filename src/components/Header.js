@@ -3,9 +3,7 @@ import { useEffect, useState } from "react"
 import { useLocation } from "react-router-dom"
 import { GiHamburgerMenu } from "react-icons/gi"
 
-const Header = () => {
-
-  const [showMenu, setShowMenu] = useState(false)
+const Header = ({ onMenuToggle }) => {
 
   const [hide, setHide] = useState(false)
   const location = useLocation()
@@ -33,14 +31,12 @@ useEffect(() => {
 
   return <header className={`header ${hide ? "hide-header" : ""}`}>
       
-      <button className="button" onClick={ ()=> setShowMenu(!showMenu) }>
+      <button className="button" onClick={ onMenuToggle }>
         <GiHamburgerMenu />
       </button>
     
         <h1 >AMAZING SHOP</h1>
-        <div className="nav-button">
 
-    </div>
   </header>
     
 }

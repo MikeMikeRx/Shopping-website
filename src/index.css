@@ -67,7 +67,6 @@ nav {
 
 @media(max-width: 1300px){
   nav {
-
     display: none; 
     position: fixed; 
     top: 0;
@@ -82,7 +81,7 @@ nav {
     z-index: 1000;
   }
 
-    nav.nav-visible {
+  nav.nav-visible {
     display: block; 
   }
 

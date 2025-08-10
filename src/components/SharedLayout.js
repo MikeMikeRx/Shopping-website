@@ -7,6 +7,7 @@ import { useState } from "react"
 
 const SharedLayout = () => {
   const [selectedCategories, setSelectedCategories] = useState([])
+  const [menuVisible, setMenuVisible] = useState(false)
 
   const handleCategoryChange = (category, checked) =>{
     setSelectedCategories(prev => checked
@@ -14,12 +15,17 @@ const SharedLayout = () => {
     )
   }
 
+  const handleMenuToggle = () => {
+    setMenuVisible(prev => !prev)
+  }
+
   return <div className="layout">
-    <Header />
+    <Header onMenuToggle={handleMenuToggle} />
     <div className="main-body-content">
       <Navigation 
       selectedCategories={selectedCategories}
       onCategoryChange={handleCategoryChange}
+      isVisible={menuVisible}
       />
       <div className="content-wrapper">
         <main className="main-content">

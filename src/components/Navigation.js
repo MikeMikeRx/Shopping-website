@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom"
 import { useLocation } from "react-router-dom"
 import navLinks from "../navlinks"
 
-const Navigation = ({ selectedCategories, onCategoryChange }) => {
+const Navigation = ({ selectedCategories, onCategoryChange, isVisible }) => {
 
   const location = useLocation()
 
@@ -14,7 +14,7 @@ const Navigation = ({ selectedCategories, onCategoryChange }) => {
     onCategoryChange(name, checked)
   }
 
-  return <nav>
+  return <nav className={ isVisible ? "nav-visible" : "" }>
     <div className="menu">
         <div className="main-menu">
           <NavLink to="/">Home</NavLink>
