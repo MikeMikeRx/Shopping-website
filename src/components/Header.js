@@ -12,6 +12,12 @@ useEffect(() => {
   let lastScrollY = 0
 
   const handleScroll = () => {
+    if(window.innerWidth >= 1300){
+      setHide(false)
+      return
+    }
+
+
     if (location.pathname === '/products'){
     const currentScrollY = window.scrollY
 
