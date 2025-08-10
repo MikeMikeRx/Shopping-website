@@ -6,7 +6,7 @@ import { useLocation } from "react-router-dom"
 import navLinks from "../navlinks"
 
 const Navigation = ({ selectedCategories, onCategoryChange }) => {
-  const [showMenu, setShowMenu] = useState(true)
+  const [showMenu, setShowMenu] = useState(false)
   const location = useLocation()
 
   const isProductsPage = location.pathname === "/products"

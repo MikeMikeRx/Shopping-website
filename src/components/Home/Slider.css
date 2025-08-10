@@ -74,7 +74,7 @@
 
 @media (max-width: 480px) {
   .product-card {
-    flex: 0 0 100%; 
-    max-width: 100%;
+    flex: 0 0 calc(80%/ 2); 
+    max-width: calc(80%/ 2);
   }
 }

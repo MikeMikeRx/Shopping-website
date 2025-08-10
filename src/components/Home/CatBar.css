@@ -3,17 +3,28 @@
     display: flex;
     gap: 15px;
     background-color: transparent;
+    flex-wrap: wrap;
 }
 
 
 .categories-section img{
-    flex: 1;
-    height: 260px;
+    flex: 1 1 33.333% - 15px;
+    height: clamp(350px, 2vw, 400px);
     object-fit: cover;
     cursor: pointer;
     transition: transform 0.2s ease-in-out;
+    border-radius: 8px;
 }
 
 .categories-section img:hover{
     transform: scale(1.05);
 }
+
+@media(max-width: 1540px) {
+
+    .categories-section img{
+    flex: 1 1 33.333% - 15px;
+    height: clamp(265px, 2vw, 400px);
+    }
+}
+
