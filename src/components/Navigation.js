@@ -16,6 +16,7 @@ const Navigation = ({ selectedCategories, onCategoryChange, isVisible }) => {
 
   return <nav className={ isVisible ? "nav-visible" : "" }>
     <div className="menu">
+      <button className="close-button">X</button>
         <div className="main-menu">
           <NavLink to="/">Home</NavLink>
           <NavLink to="products" className={({ isActive }) => isActive ? "active" : ""}>Products</NavLink> 

@@ -54,7 +54,7 @@ const ProductDetail = () => {
           <p>Category: {product.category}</p>
           <p>Currently in stock: {product.stock}</p>
           </div>
-          <button>Order now</button>
+          <button className="order-button" >Order now</button>
         </div>
       )}
     </section>

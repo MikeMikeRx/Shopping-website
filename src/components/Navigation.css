@@ -48,3 +48,22 @@
     font-size: 20px;
     text-decoration: none;
 }
+
+
+.close-button{
+    display: none;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.close-button:hover{
+    
+}
+
+@media(max-width:1300px){
+    .close-button{
+        display: block;
+        width: 10px;
+        height: 15px;
+    }
+}

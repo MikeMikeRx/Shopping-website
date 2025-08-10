@@ -12,7 +12,7 @@ useEffect(() => {
   let lastScrollY = 0
 
   const handleScroll = () => {
-    if(window.innerWidth >= 1300){
+    if(window.innerWidth >= 800){
       setHide(false)
       return
     }
@@ -37,7 +37,7 @@ useEffect(() => {
 
   return <header className={`header ${hide ? "hide-header" : ""}`}>
       
-      <button className="button" onClick={ onMenuToggle }>
+      <button className="menu-button" onClick={ onMenuToggle }>
         <GiHamburgerMenu />
       </button>
     
