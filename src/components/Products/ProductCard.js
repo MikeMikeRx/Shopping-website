@@ -1,16 +1,21 @@
 import productImages from "../images/productImages"
 
-export const ProductCard = ({ category, type, productKey }) => {
-    const imageForType = productImages[category]?.[type]
-    const imageSrc = productImages[category]?.[productKey] : null
+const ProductCard = ({ category, type }) => {
+    const images = productImages[category]?.[type] || []
+    const imageSrc = images.length > 0 ? images[0] : null
 
   return (
     <div>
         {imageSrc ? (
-            <img src={imageSrc} alt={`${category} ${productKey}`} loading="lazy" />
+            <img src={imageSrc} alt={`${category} ${type}`} loading="lazy" />
         ) : (
-            <p>No Image found....</p>
+         <p>No Image found....</p>     
         )}
+             
     </div>
   )
 }
+
+
+
+export default ProductCard
