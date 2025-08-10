@@ -2,6 +2,7 @@ import "./ProductDetail.css"
 import { useParams } from "react-router-dom"
 import { useState, useEffect } from "react"
 import fetchAllProducts from "../utils/fetchAllProducts"
+import productImages from "../images/productImages"
 import DummyImg from "../images/electronics/tv3.jpg"
 
 const ProductDetail = () => {
@@ -15,7 +16,7 @@ const ProductDetail = () => {
     const fetchProductFromAll = async () => {
       try {
         const allProducts = await fetchAllProducts()
-        const matched = allProducts.find( (oneProduct) => oneProduct.id === productId)
+        const matched = allProducts.find( (oneProduct) => String(oneProduct.id) === String(productId))
 
         if(matched) {
           setProduct(matched)
@@ -46,7 +47,12 @@ const ProductDetail = () => {
       {error && <p>{error}</p>}
       {product && (
         <div key={product.id}>
+
+
           <img src={DummyImg} alt="" />
+
+
+          
           <div className="text">
           <h2>{product.name}</h2>          
           <p className="description">{product.description}</p>
