@@ -93,10 +93,9 @@ const Slider = () => {
 
         <div className={`product-cards-wrapper ${animation}`}>                 
           {visibleProducts.map((product) =>(
-            <div key={product.id} className="product-card">
+            <div key={product.id} className="product-card">              
               <Link to={`/productdetail/${product.id}`}>
-                <img src={DummyImg} alt="" />
-                <h5>{product.name}</h5>
+                <img src={productImages[product.img]} alt={product.name} />                
               </Link>
             </div>
           ))}
