@@ -25,6 +25,7 @@ const SharedLayout = () => {
       <Navigation 
       selectedCategories={selectedCategories}
       onCategoryChange={handleCategoryChange}
+      onMenuToggle={handleMenuToggle}
       isVisible={menuVisible}
       />
       <div className="content-wrapper">
