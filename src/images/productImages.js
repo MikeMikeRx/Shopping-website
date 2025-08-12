@@ -1,17 +1,21 @@
-import tv1 from "./electronics/tv1.jpg"
-import tv2 from "./electronics/tv2.jpg"
-import tv3 from "./electronics/tv3.jpg"
-import tv4 from "./electronics/tv4.jpg"
-import lap1 from "./electronics/latop1.jpg"
-import lap2 from "./electronics/laptop2.jpg"
-import lap3 from "./electronics/laptop3.jpg"
-import lap4 from "./electronics/laptop4.jpg"
-import mob1 from "./electronics/mob1.jpg"
-import mob2 from "./electronics/mob1.jpg"
-import chair1 from "./furniture/fur3.jpg"
-import table1 from "./furniture/fur4.jpg"
-import jac1 from "./clothes/cloth1.jpg"
-import bag1 from "./clothes/cloth9.jpg"
+import tv1 from "./electronics/tv5.png"
+import tv2 from "./electronics/tv6.png"
+import tv3 from "./electronics/tv7.png"
+import tv4 from "./electronics/tv8.png"
+import lap1 from "./electronics/lap1.png"
+import lap2 from "./electronics/lap2.png"
+import lap3 from "./electronics/lap3.png"
+import lap4 from "./electronics/lap4.png"
+import mob1 from "./electronics/mob6.png"
+import mob2 from "./electronics/mob1.png"
+import chair1 from "./furniture/gam1.png"
+import table1 from "./furniture/tab1.png"
+import table2 from "./furniture/tab2.png"
+import armchair1 from "./furniture/arm1.png"
+import jac1 from "./clothes/lejack1.png"
+import hood1 from "./clothes/hood2.png"
+import jeans1 from "./clothes/jeans1.png"
+import jac2 from "./clothes/puffjac3.png"
 
 
 
@@ -27,9 +31,13 @@ const productImages = {
   mob1,
   mob2,
   chair1,
+  armchair1,
   table1,
+  table2,
   jac1,
-  bag1
+  jac2,
+  hood1,
+  jeans1,  
 }
 
 export default productImages
