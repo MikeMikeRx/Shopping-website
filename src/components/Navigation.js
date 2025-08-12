@@ -4,7 +4,7 @@ import { useLocation } from "react-router-dom"
 import sortOptions from "../sortOptions"
 import navLinks from "../navlinks"
 
-const Navigation = ({ selectedCategories, onCategoryChange, isVisible, onMenuToggle }) => {
+const Navigation = ({ selectedCategories, onCategoryChange, isVisible, onMenuToggle, selectedSort }) => {
 
   const location = useLocation()
 
@@ -13,6 +13,10 @@ const Navigation = ({ selectedCategories, onCategoryChange, isVisible, onMenuTog
   const handleChange = (e) => {
     const { name, checked } = e.target
     onCategoryChange(name, checked)
+  }
+
+  const handleSortChange = (e) => {
+    onSortChange(e.target.value)
   }
 
   return <nav className={ isVisible ? "nav-visible" : "" }>
@@ -44,9 +48,23 @@ const Navigation = ({ selectedCategories, onCategoryChange, isVisible, onMenuTog
         </div>
       )}
 
-      <div className="sort-options">
-        <h2>Sort products by:</h2>
-      </div>
+      {isProductsPage && (
+        <div className="sort-container">
+          <h2>Sort products by:</h2>
+          {sortOptions.map(({ id,value, text }) =>(
+            <label className="sort-options" key={id}>
+              <input 
+              type="radio" 
+              name="sort"
+              value={value}
+              checked={selectedSort === value}
+              onChange={handleSortChange}
+              />
+              {text}
+            </label>
+          ))}
+        </div>
+      )}
 
         <ul className="nav-menu">
           {
