@@ -1,4 +1,5 @@
 import { IoStar } from "react-icons/io5"
+import { useState, useRef } from "react"
 
 const Rating = () => {
   return (
