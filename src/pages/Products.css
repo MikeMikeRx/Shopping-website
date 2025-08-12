@@ -41,7 +41,17 @@
 
 .one-product a {
     text-decoration: none;
+}
+
+.details-link {
+    display: block;
     color: black;
+    margin: 15px 0;
+}
+
+.details-link:hover {
+    transform: scale(1.05);
+    transition: all 0.2s linear;
 }
 
 .order-btn {
