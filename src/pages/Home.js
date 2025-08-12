@@ -1,4 +1,4 @@
-import CatBar from "../components/Home/CatBar"
+import TopBar from "../components/Home/TopBar"
 import Slider from "../components/Home/Slider"
 import BotBar from "../components/Home/BotBar"
 
@@ -6,7 +6,7 @@ import BotBar from "../components/Home/BotBar"
 const Home = () => {
   return <div className="home-page-container">
     <section className="home-section">
-      <CatBar/>    
+      <TopBar/>    
     </section>
 
     <section className="home-section">
