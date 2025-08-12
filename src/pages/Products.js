@@ -70,7 +70,7 @@ useEffect( () => {
         <Rating />
         <Link to={`/productdetail/${id}`}>Click here for more details</Link>
         <h3>Price: {price}$</h3>                
-        <button>Order now</button>
+        <button className="order-btn">Order now</button>
         
       </div>
       )
