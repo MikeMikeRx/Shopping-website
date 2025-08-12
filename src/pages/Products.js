@@ -57,7 +57,7 @@ useEffect( () => {
     
       return (
       <div key={id} className="one-product">
-
+        <Link to={`/productdetail/${id}`}>
         <img 
         src={productImages[img]} 
         alt={name} 
@@ -66,10 +66,9 @@ useEffect( () => {
         <h2>{name}</h2>
         <p>Category: {type}</p>
         <p>Rating: ****** </p>
-        <h3>Price: {price}$</h3>        
-        <Link className="deails-link" to={`/productdetail/${id}`}>Click here for more details</Link>
+        <h3>Price: {price}$</h3>                
         <button>Order now</button>
-
+        </Link>
       </div>
       )
     })}

@@ -21,7 +21,7 @@
 }
 
 .one-product:hover{
-    transform: scale(1.01);
+    transform: scale(1.02);
     transition: all 0.1s linear;
 }
 
@@ -41,15 +41,9 @@
 
 .one-product a {
     text-decoration: none;
-    color: #0D448C;
-    transition: all 0.2s linear;
+    color: black;
 }
 
-.one-product a:hover{
-    transform: scale(1.05)
-} 
-
-.one-product a,
 .one-product button {
     display: block;
     margin: 0px auto;    
