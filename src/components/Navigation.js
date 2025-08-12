@@ -4,7 +4,14 @@ import { useLocation } from "react-router-dom"
 import sortOptions from "../sortOptions"
 import navLinks from "../navlinks"
 
-const Navigation = ({ selectedCategories, onCategoryChange, isVisible, onMenuToggle, selectedSort }) => {
+const Navigation = ({ 
+  selectedCategories, 
+  onCategoryChange, 
+  isVisible, 
+  onMenuToggle, 
+  selectedSort, 
+  onSortChange 
+}) => {
 
   const location = useLocation()
 
@@ -51,18 +58,25 @@ const Navigation = ({ selectedCategories, onCategoryChange, isVisible, onMenuTog
       {isProductsPage && (
         <div className="sort-container">
           <h2>Sort products by:</h2>
-          {sortOptions.map(({ id,value, text }) =>(
-            <label className="sort-options" key={id}>
+          {[
+            { value: "name_asc", label: "Name A-Z" },
+            { value: "name_desc", label: "Name A-Z" },
+            { value: "price_asc", label: "Price: Low to High" },
+            { value: "price_desc", label: "Price: High to Low" },
+            { value: "date_asc", label: "Release Date: Oldest First" },
+            { value: "date_desc", label: "Release Date: Newest First" }
+          ].map(({ value, label }) => (
+            <label key={value}>
               <input 
-              type="radio" 
-              name="sort"
-              value={value}
-              checked={selectedSort === value}
-              onChange={handleSortChange}
+                type="radio" 
+                name="sort"
+                value={value}
+                checked={selectedSort === value}
+                onChange={(e) => onSortChange(e.target.value)}
               />
-              {text}
+              {label}
             </label>
-          ))}
+          ))}          
         </div>
       )}
 
