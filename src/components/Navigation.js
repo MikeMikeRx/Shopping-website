@@ -60,7 +60,7 @@ const Navigation = ({
           <h2>Sort products by:</h2>
           {[
             { value: "name_asc", label: "Name A-Z" },
-            { value: "name_desc", label: "Name A-Z" },
+            { value: "name_desc", label: "Name Z-A" },
             { value: "price_asc", label: "Price: Low to High" },
             { value: "price_desc", label: "Price: High to Low" },
             { value: "release_date_asc", label: "Release Date: Oldest First" },

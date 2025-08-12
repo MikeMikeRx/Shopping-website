@@ -1,3 +1,4 @@
+/* General styles */
 .main-menu a{
     display: block;
     text-decoration: none;
@@ -10,9 +11,13 @@
     transform: scale(1.1);
 }
 
+
+/* Checkbox-container */
 .checkbox-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     margin-top: 15px;
-    padding-left: 15px;
 }
 
 .checkbox-container h2{
@@ -28,11 +33,32 @@
     height: 18px;
 }
 
-.sort-options {
+/* Sort-Container */
+.sort-container {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    margin-top: 20px;
+    font-size: 16px;
+}
 
+.sort-container label {
+    display: flex;
+    gap: 5px;
+}
+
+.sort-container h2{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.sort-input{
+    margin-bottom: 6px;
 }
 
 
+
+/* Dummy Links */
 .nav-list .active + .checkbox-container {
     display: block;
 }
@@ -53,6 +79,8 @@
     text-decoration: none;
 }
 
+
+/* Closing button for Query */
 .close-button{
     display: none;
     position: fixed;
@@ -72,6 +100,8 @@
     transition: all 0.2s linear;
 }
 
+
+/* Query */
 @media(max-width:1300px){
     .close-button{
         display: block;
