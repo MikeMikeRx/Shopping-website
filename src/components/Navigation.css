@@ -40,7 +40,6 @@
     list-style: none;    
 }
 
-
 .nav-menu a{
     color: black;
     display: block;
@@ -48,7 +47,6 @@
     font-size: 20px;
     text-decoration: none;
 }
-
 
 .close-button{
     display: none;

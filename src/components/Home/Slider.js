@@ -4,7 +4,6 @@ import { useState, useEffect} from "react"
 import { Link } from "react-router-dom"
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io"
 import productImages from "../../images/productImages"
-import DummyImg from "../../images/electronics/tv3.jpg"
 
 const visibleCount = 6
 
@@ -32,18 +31,6 @@ const Slider = () => {
     loadProducts()
   }, [])
 
-  useEffect(() => {
-    const loadProducts = async () => {
-      const all = await fetchAllProducts()
-      setAllProducts(all)
-
-      const initialSet = getRandomProducts(all)
-      setHistory([initialSet])
-      setCurrentIndex(0)
-    }
-
-    loadProducts()
-  }, [])
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -61,14 +48,12 @@ const Slider = () => {
       if (currentIndex < history.length -1) {
       setCurrentIndex(currentIndex + 1)
     } else {
-      // Generate new set and push to the history
       const newSet = getRandomProducts(allProducts)
       setHistory([...history, newSet])
-      setCurrentIndex(history.length) //Point to the new one
+      setCurrentIndex(history.length) 
     }
-
     setAnimation("slide-in")
-    }, 300) //Delay for exit animation
+    }, 300) 
   }
 
   const handlePrev = () => {

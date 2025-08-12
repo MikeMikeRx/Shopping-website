@@ -1,4 +1,3 @@
-import "./Home.css"
 import CatBar from "../components/Home/CatBar"
 import Slider from "../components/Home/Slider"
 import BotBar from "../components/Home/BotBar"

@@ -9,7 +9,6 @@
 
 .one-product {
     width: 25%;
-    /* border: 1px solid #a2c9fc;; */
     margin: 20px;
     padding: 0px 15px;
     padding-bottom: 15px;
@@ -69,7 +68,7 @@
 }
 
 .one-product button:hover{
- background-color: #0f52ab;
- transform: scale(1.05);
- transition: all 0.2s linear;
+    background-color: #0f52ab;
+    transform: scale(1.05);
+    transition: all 0.2s linear;
 }

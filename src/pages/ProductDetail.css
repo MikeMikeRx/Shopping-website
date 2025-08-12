@@ -9,20 +9,15 @@
     background: white;
     border-radius: 15px;
     box-shadow: 15px 20px 45px 20px rgb(95, 95, 95);
-
-
-    /* border: 3px solid rgb(255, 0, 179); */
 }
 
 .product-detail img {
     width: 600px;
-    /* border: 2px solid black; */
     margin-top: 20px;
 }
 
 .text{
     background: white;
-    /* border: 0.1px solid black; */
     word-spacing: 4px;
 }
 

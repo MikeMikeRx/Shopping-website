@@ -6,8 +6,6 @@ import { useOutletContext, useLocation } from "react-router-dom"
 import SearchBar from "../components/Products/SearchBar"
 import productImages from "../images/productImages"
 
-import DummyImg from "../images/furniture/fur8.jpg"
-
 const Products = () => {
   const { selectedCategories, setSelectedCategories } = useOutletContext()
   const [data, setData] = useState([])
@@ -59,6 +57,7 @@ useEffect( () => {
     
       return (
       <div key={id} className="one-product">
+
         <img 
         src={productImages[img]} 
         alt={name} 
@@ -68,8 +67,9 @@ useEffect( () => {
         <p>Category: {type}</p>
         <p>Rating: ****** </p>
         <h3>Price: {price}$</h3>        
-        <Link to={`/productdetail/${id}`}>Click here for more details</Link>
+        <Link className="deails-link" to={`/productdetail/${id}`}>Click here for more details</Link>
         <button>Order now</button>
+
       </div>
       )
     })}

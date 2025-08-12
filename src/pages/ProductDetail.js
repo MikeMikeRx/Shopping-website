@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom"
 import { useState, useEffect } from "react"
 import fetchAllProducts from "../utils/fetchAllProducts"
 import productImages from "../images/productImages"
-import DummyImg from "../images/electronics/tv3.jpg"
 
 const ProductDetail = () => {
   const { productId } = useParams()
@@ -48,7 +47,7 @@ const ProductDetail = () => {
       {product && (
         <div key={product.id}>
           <img 
-          src={productImages[product.img] || DummyImg} 
+          src={productImages[product.img]} 
           alt={product.name} 
           />
           <div className="text">
