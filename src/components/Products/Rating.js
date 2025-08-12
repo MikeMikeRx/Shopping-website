@@ -1,3 +1,4 @@
+import "./Rating.css"
 import { IoStar } from "react-icons/io5"
 import { useState, useRef, useEffect } from "react"
 
