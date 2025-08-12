@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import { useOutletContext, useLocation } from "react-router-dom"
 import SearchBar from "../components/Products/SearchBar"
+import Rating from "../components/Products/Rating"
 import productImages from "../images/productImages"
 
 const Products = () => {
@@ -63,12 +64,14 @@ useEffect( () => {
         alt={name} 
         className={category}
         />
+        </Link>
         <h2>{name}</h2>
         <p>Category: {type}</p>
-        <p>Rating: ****** </p>
+        <Rating />
+        <Link to={`/productdetail/${id}`}>Click here for more details</Link>
         <h3>Price: {price}$</h3>                
         <button>Order now</button>
-        </Link>
+        
       </div>
       )
     })}
