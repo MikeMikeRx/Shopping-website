@@ -66,7 +66,7 @@ const Navigation = ({
             { value: "release_date_asc", label: "Release Date: Oldest First" },
             { value: "release_date_desc", label: "Release Date: Newest First" }
           ].map(({ value, label }) => (
-            <label key={value}>
+            <label key={value} className="sort-input">
               <input 
                 type="radio" 
                 name="sort"
