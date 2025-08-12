@@ -18,18 +18,6 @@ const navLinks = [
         id:5, 
         url: "*", 
         text: "Climate Pledge Friendly"
-    },{
-        id:6, 
-        url: "*", 
-        text: "Link-8"
-    },{
-        id:7, 
-        url: "*", 
-        text: "Link-7"
-    },{
-        id:8, 
-        url: "*", 
-        text: "Link-8"
     },
 ]
 

@@ -28,6 +28,11 @@
     height: 18px;
 }
 
+.sort-options {
+
+}
+
+
 .nav-list .active + .checkbox-container {
     display: block;
 }

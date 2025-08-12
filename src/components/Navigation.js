@@ -24,7 +24,7 @@ const Navigation = ({ selectedCategories, onCategoryChange, isVisible, onMenuTog
 
       {isProductsPage && (
         <div className="checkbox-container">
-          <h2>Filter:</h2>
+          <h2>Filter & Sort:</h2>
 
           {["electronics", "clothes", "furniture"].map((category) => (
             <div key={category}>
@@ -42,6 +42,10 @@ const Navigation = ({ selectedCategories, onCategoryChange, isVisible, onMenuTog
           ))}
         </div>
       )}
+
+      <div className="sort-options">
+        <h2>Sort products by:</h2>
+      </div>
 
         <ul className="nav-menu">
           {
