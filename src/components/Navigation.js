@@ -1,6 +1,7 @@
 import "./Navigation.css"
 import { NavLink } from "react-router-dom"
 import { useLocation } from "react-router-dom"
+import sortOptions from "../sortOptions"
 import navLinks from "../navlinks"
 
 const Navigation = ({ selectedCategories, onCategoryChange, isVisible, onMenuToggle }) => {
