@@ -8,11 +8,16 @@ import { useState } from "react"
 const SharedLayout = () => {
   const [selectedCategories, setSelectedCategories] = useState([])
   const [menuVisible, setMenuVisible] = useState(false)
+  const [selectedSort, setSelectedSort] = useState("")
 
   const handleCategoryChange = (category, checked) =>{
     setSelectedCategories(prev => checked
       ? [...prev, category] : prev.filter(item => item !== category)
     )
+  }
+
+  const handleSortChange = (sortValue) => {
+    selectedSort(sortValue)
   }
 
   const handleMenuToggle = () => {
@@ -27,10 +32,12 @@ const SharedLayout = () => {
       onCategoryChange={handleCategoryChange}
       onMenuToggle={handleMenuToggle}
       isVisible={menuVisible}
+      selectedSort={selectedSort}
+      onSortChange={handleSortChange}
       />
       <div className="content-wrapper">
         <main className="main-content">
-          <Outlet context={{ selectedCategories, setSelectedCategories }}/>
+          <Outlet context={{ selectedCategories, setSelectedCategories, selectedSort, setSelectedSort }}/>
         </main>
       </div>      
     </div>
