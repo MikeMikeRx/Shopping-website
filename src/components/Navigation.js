@@ -63,8 +63,8 @@ const Navigation = ({
             { value: "name_desc", label: "Name A-Z" },
             { value: "price_asc", label: "Price: Low to High" },
             { value: "price_desc", label: "Price: High to Low" },
-            { value: "date_asc", label: "Release Date: Oldest First" },
-            { value: "date_desc", label: "Release Date: Newest First" }
+            { value: "release_date_asc", label: "Release Date: Oldest First" },
+            { value: "release_date_desc", label: "Release Date: Newest First" }
           ].map(({ value, label }) => (
             <label key={value}>
               <input 
