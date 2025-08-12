@@ -8,7 +8,7 @@ import { useState } from "react"
 const SharedLayout = () => {
   const [selectedCategories, setSelectedCategories] = useState([])
   const [menuVisible, setMenuVisible] = useState(false)
-  const [selectedSort, setSelectedSort] = useState("")
+  const [selectedSort, setSelectedSort] = useState("name_asc")
 
   const handleCategoryChange = (category, checked) =>{
     setSelectedCategories(prev => checked
@@ -33,7 +33,7 @@ const SharedLayout = () => {
       onMenuToggle={handleMenuToggle}
       isVisible={menuVisible}
       selectedSort={selectedSort}
-      onSortChange={handleSortChange}
+      onSortChange={setSelectedSort}
       />
       <div className="content-wrapper">
         <main className="main-content">
