@@ -3,12 +3,14 @@ import Navigation from "./Navigation"
 import Footer from "./Footer"
 import { Outlet } from "react-router-dom"
 import { useState, useEffect } from "react"
+import fetchAllProducts from "../utils/fetchAllProducts"
 
 
 const SharedLayout = () => {
   const [selectedCategories, setSelectedCategories] = useState([])
   const [menuVisible, setMenuVisible] = useState(false)
   const [selectedSort, setSelectedSort] = useState("name_asc")
+  const [allProducts, setAllProducts] = useState([])
 
   const handleCategoryChange = (category, checked) =>{
     setSelectedCategories(prev => checked
@@ -23,6 +25,14 @@ const SharedLayout = () => {
   const handleMenuToggle = () => {
     setMenuVisible(prev => !prev)
   }
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const products = await fetchAllProducts()
+      setAllProducts(products)
+    }
+    fetchData()
+  },[])
 
   return <div className="layout">
     <Header onMenuToggle={handleMenuToggle} menuVisible={menuVisible}/>
