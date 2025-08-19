@@ -1,7 +1,6 @@
 import "./Navigation.css"
-import { NavLink } from "react-router-dom"
-import { useLocation } from "react-router-dom"
-import sortOptions from "../sortOptions"
+import { NavLink, useNavigate, useLocation } from "react-router-dom"
+import { useState, useEffect } from "react"
 import navLinks from "../navlinks"
 
 const Navigation = ({ 
@@ -14,6 +13,7 @@ const Navigation = ({
 }) => {
 
   const location = useLocation()
+  const navigate = useNavigate()
 
   const isProductsPage = location.pathname === "/products"
   const isHomePage = location.pathname === "/"
