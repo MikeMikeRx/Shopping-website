@@ -2,7 +2,7 @@ import Header from "./Header"
 import Navigation from "./Navigation"
 import Footer from "./Footer"
 import { Outlet } from "react-router-dom"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 
 const SharedLayout = () => {
@@ -34,6 +34,7 @@ const SharedLayout = () => {
       isVisible={menuVisible}
       selectedSort={selectedSort}
       onSortChange={setSelectedSort}
+      // allProducts={allProducts}
       />
       <div className="content-wrapper">
         <main className="main-content">
