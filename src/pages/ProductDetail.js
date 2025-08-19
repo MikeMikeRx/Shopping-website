@@ -45,7 +45,7 @@ const ProductDetail = () => {
     <section className="product-detail">
       {error && <p>{error}</p>}
       {product && (
-        <div key={product.id}>
+        <div className="product-window" key={product.id}>
           <img 
           src={productImages[product.img]} 
           alt={product.name} 
