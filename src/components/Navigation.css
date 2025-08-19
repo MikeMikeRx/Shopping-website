@@ -105,6 +105,8 @@
 @media(max-width:1300px){
     .close-button{
         display: block;
-        
+        }
+    .sort-container label {
+        font-size: 14px;
     }
 }
