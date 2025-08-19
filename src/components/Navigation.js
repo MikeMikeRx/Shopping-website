@@ -9,7 +9,8 @@ const Navigation = ({
   isVisible, 
   onMenuToggle, 
   selectedSort, 
-  onSortChange 
+  onSortChange,
+  allProducts 
 }) => {
 
   const location = useLocation()
@@ -25,6 +26,10 @@ const Navigation = ({
     const topRated = ratings.filter(r => r.rating > 0).slice(0, 9)
     setBestRatedIds(topRated.map(r => r.id))
   }, [allProducts])
+
+  const handleBestRated = () => {
+    navigate("products?bestRated=true")
+  }
 
   const isProductsPage = location.pathname === "/products"
   const isHomePage = location.pathname === "/"
