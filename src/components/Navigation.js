@@ -97,19 +97,17 @@ const Navigation = ({
         </div>
       )}
 
-      {isHomePage && ( 
-        <div>
-          <ul className="nav-menu">
-            {navLinks.map( (oneLink) => {
-                const {id, url, text} = oneLink
-                return <li key={id}>
-                  <a href={url}>{text}</a>
-                </li>
-              })
-            }
-          </ul>
-        </div>
-      )}
+      <ul className="nav-menu">
+        <button onClick={handleBestRated}>Test XXX</button>
+        {navLinks.map( (oneLink) => {
+          const {id, url, text} = oneLink
+            return <li key={id}>
+              <a href={url}>{text}</a>
+            </li>
+          })
+        }
+      </ul>
+
 
     </div>    
   </nav>
