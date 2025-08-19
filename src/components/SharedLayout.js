@@ -20,7 +20,7 @@ const SharedLayout = () => {
         setAllProducts(products)       
         } catch {
           setError("Failed to load products")
-          console.log(err)
+          console.log(error)
         }
       }
     fetchData()

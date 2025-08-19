@@ -6,29 +6,34 @@ import Rating from "../components/Products/Rating"
 import productImages from "../images/productImages"
 
 const Products = () => {
-  const { selectedCategories, setSelectedCategories, selectedSort, allProducts } = useOutletContext()
-  const [error, setError] = useState("")
+  const { 
+    selectedCategories, 
+    setSelectedCategories, 
+    selectedSort, 
+    allProducts, 
+    error 
+  } = useOutletContext()
   const [searchTerm,setSearchTerm] = useState("")
   const location = useLocation()
   
 
-useEffect(() => {
-  const params = new URLSearchParams(location.search)
-  const categoryFromQuery = params.get("category")
+  useEffect(() => {
+    const params = new URLSearchParams(location.search)
+    const categoryFromQuery = params.get("category")
 
-  if (categoryFromQuery) {
-    setSelectedCategories([categoryFromQuery])
-  }
-}, [location.search, setSelectedCategories])
+    if (categoryFromQuery) {
+      setSelectedCategories([categoryFromQuery])
+    }
+  }, [location.search, setSelectedCategories])
 
 
-const filteredData = allProducts.filter((product) =>
-  selectedCategories.length > 0
-    ? selectedCategories.includes(product.category)
-    : true
-).filter((product) =>
-  product.name.toLowerCase().includes(searchTerm.toLowerCase())
-);
+  const filteredData = allProducts.filter((product) =>
+    selectedCategories.length > 0
+      ? selectedCategories.includes(product.category)
+      : true
+  ).filter((product) =>
+    product.name.toLowerCase().includes(searchTerm.toLowerCase())
+  )
 
   filteredData.sort((a, b) => {
     switch(selectedSort) {
