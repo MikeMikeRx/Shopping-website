@@ -9,3 +9,13 @@ footer {
     z-index: 1001;
 
 }
+
+.href a{
+    text-decoration: none;
+    color: #F2F2F2;
+}
+
+.href a:hover{
+    text-decoration: underline;
+    color: aliceblue;
+}
