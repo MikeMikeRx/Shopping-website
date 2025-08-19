@@ -1,4 +1,4 @@
-import tv1 from "./electronics/tv5.png"
+import tv1 from "./electronics/tv8.png"
 import tv2 from "./electronics/tv6.png"
 import tv3 from "./electronics/tv7.png"
 import tv4 from "./electronics/tv8.png"

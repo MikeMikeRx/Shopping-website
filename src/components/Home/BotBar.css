@@ -80,8 +80,14 @@
 }
 
 
-@media(max-width: 1540px){
+@media(max-width: 1400px){
      .sec-1 .img-2{
     display: none;
+    }
+    .sec-1 p{
+        margin-top: 40px;
+    }
+    .sec-3 h3{
+        margin-top: 40px;
     }  
 }

@@ -21,11 +21,12 @@
 }
 
 
-
-@media(max-width: 1300px) {
-     .categories-section img{
+@media(max-width: 1400px){
+    .categories-section img{
     flex: 1 1 33.333% - 15px;
-    height: clamp(245px, 2vw, 300px);
+    height: clamp(240px, 2vw, 300px);
     }
 }
+
+
 
