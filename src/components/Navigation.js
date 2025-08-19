@@ -14,6 +14,14 @@ const Navigation = ({
 
   const location = useLocation()
   const navigate = useNavigate()
+  const [bestRatedIds, setBestRatedIds] = useState([])
+
+  useEffect(() => {
+    const ratings = allProducts.map(product => ({
+      id: product.id,
+      rating: Number(localStorage.getItem(`rating_${product.id}`) || 0)
+    }))
+  })
 
   const isProductsPage = location.pathname === "/products"
   const isHomePage = location.pathname === "/"
