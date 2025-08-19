@@ -11,6 +11,20 @@ const SharedLayout = () => {
   const [menuVisible, setMenuVisible] = useState(false)
   const [selectedSort, setSelectedSort] = useState("name_asc")
   const [allProducts, setAllProducts] = useState([])
+  const [error, setError] = useState("")
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const products = await fetchAllProducts()
+        setAllProducts(products)       
+        } catch {
+          setError("Failed to load products")
+          console.log(err)
+        }
+      }
+    fetchData()
+  },[])
 
   const handleCategoryChange = (category, checked) =>{
     setSelectedCategories(prev => checked
@@ -19,20 +33,12 @@ const SharedLayout = () => {
   }
 
   const handleSortChange = (sortValue) => {
-    selectedSort(sortValue)
+    setSelectedSort(sortValue)
   }
 
   const handleMenuToggle = () => {
     setMenuVisible(prev => !prev)
   }
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const products = await fetchAllProducts()
-      setAllProducts(products)
-    }
-    fetchData()
-  },[])
 
   return <div className="layout">
     <Header onMenuToggle={handleMenuToggle} menuVisible={menuVisible}/>
@@ -44,11 +50,20 @@ const SharedLayout = () => {
       isVisible={menuVisible}
       selectedSort={selectedSort}
       onSortChange={setSelectedSort}
-      // allProducts={allProducts}
+      allProducts={allProducts}
       />
       <div className="content-wrapper">
         <main className="main-content">
-          <Outlet context={{ selectedCategories, setSelectedCategories, selectedSort, setSelectedSort }}/>
+          <Outlet 
+          context={{ 
+            selectedCategories, 
+            setSelectedCategories, 
+            selectedSort, 
+            setSelectedSort, 
+            allProducts,
+            error
+            }}
+          />
         </main>
       </div>      
     </div>

@@ -1,15 +1,12 @@
 import "./Products.css"
-import fetchAllProducts from "../utils/fetchAllProducts"
 import { useState, useEffect } from "react"
-import { Link } from "react-router-dom"
-import { useOutletContext, useLocation } from "react-router-dom"
+import { useOutletContext, useLocation, Link } from "react-router-dom"
 import SearchBar from "../components/Products/SearchBar"
 import Rating from "../components/Products/Rating"
 import productImages from "../images/productImages"
 
 const Products = () => {
-  const { selectedCategories, setSelectedCategories, selectedSort } = useOutletContext()
-  const [data, setData] = useState([])
+  const { selectedCategories, setSelectedCategories, selectedSort, allProducts } = useOutletContext()
   const [error, setError] = useState("")
   const [searchTerm,setSearchTerm] = useState("")
   const location = useLocation()
@@ -25,27 +22,13 @@ useEffect(() => {
 }, [location.search, setSelectedCategories])
 
 
-useEffect( () => {
-  const getProducts = async () => {
-    try {
-      const products = await fetchAllProducts()
-      setData(products)
-    } catch (err) {
-      setError("Failed to load products")
-      console.error(err)      
-    }         
-  }
-  getProducts()
-}, [])
-
-
-  const filteredData = data.filter(product => 
-    selectedCategories.length > 0
+const filteredData = allProducts.filter((product) =>
+  selectedCategories.length > 0
     ? selectedCategories.includes(product.category)
     : true
-  )
-  .filter(product => product.name.toLowerCase().includes(searchTerm.toLowerCase())
-  )
+).filter((product) =>
+  product.name.toLowerCase().includes(searchTerm.toLowerCase())
+);
 
   filteredData.sort((a, b) => {
     switch(selectedSort) {
