@@ -16,6 +16,7 @@ const Navigation = ({
   const location = useLocation()
 
   const isProductsPage = location.pathname === "/products"
+  const isHomePage = location.pathname === "/"
 
   const handleChange = (e) => {
     const { name, checked } = e.target
@@ -80,16 +81,20 @@ const Navigation = ({
         </div>
       )}
 
-        <ul className="nav-menu">
-          {
-            navLinks.map( (oneLink) => {
-              const {id, url, text} = oneLink
-              return <li key={id}>
-                <a href={url}>{text}</a>
-              </li>
-            })
-          }
-        </ul>
+      {isHomePage && ( 
+        <div>
+          <ul className="nav-menu">
+            {navLinks.map( (oneLink) => {
+                const {id, url, text} = oneLink
+                return <li key={id}>
+                  <a href={url}>{text}</a>
+                </li>
+              })
+            }
+          </ul>
+        </div>
+      )}
+
     </div>    
   </nav>
    

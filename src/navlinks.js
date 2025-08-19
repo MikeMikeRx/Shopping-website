@@ -1,7 +1,7 @@
 const navLinks = [
     {   id:1, 
         url: "*", 
-        text: "Best sellers" 
+        text: "Best Rated" 
     }, 
     {   id:2, 
         url: "*", 
