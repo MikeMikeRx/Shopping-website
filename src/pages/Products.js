@@ -15,6 +15,7 @@ const Products = () => {
   } = useOutletContext()
   const [searchTerm,setSearchTerm] = useState("")
   const location = useLocation()
+  const isBestRated = new URLSearchParams(location.search).get("bestRated") === "true"
   
 
   useEffect(() => {
@@ -27,7 +28,7 @@ const Products = () => {
   }, [location.search, setSelectedCategories])
 
 
-  const filteredData = allProducts.filter((product) =>
+  let filteredData = allProducts.filter((product) =>
     selectedCategories.length > 0
       ? selectedCategories.includes(product.category)
       : true
@@ -35,25 +36,36 @@ const Products = () => {
     product.name.toLowerCase().includes(searchTerm.toLowerCase())
   )
 
-  filteredData.sort((a, b) => {
-    switch(selectedSort) {
-      case "name_asc":
-        return a.name.localeCompare(b.name)
-      case "name_desc":
-        return b.name.localeCompare(a.name)
-      case "price_asc":
-        return a.price - b.price
-      case "price_desc":
-        return b.price - a.price
-      case "release_date_asc":
-        return new Date(a.date) - new Date(b.date)
-      case "release_date_desc":
-        return new Date(b.date) - new Date(a.date)
-      default:
-        return 0
-    }
-  })
+  if(isBestRated) {
+    filteredData = filteredData
+    .map((product) => ({
+      ...product,
+      rating: Number(localStorage.getItem(`rating_${product.id}`) || 0)
+    }))
+    .filter((product) => product.rating > 0)
+    .sort((a,b) => b.rating - a.rating)
+    .slice(0,9)
+  } else {
 
+  filteredData.sort((a, b) => {
+      switch(selectedSort) {
+        case "name_asc":
+          return a.name.localeCompare(b.name)
+        case "name_desc":
+          return b.name.localeCompare(a.name)
+        case "price_asc":
+          return a.price - b.price
+        case "price_desc":
+          return b.price - a.price
+        case "release_date_asc":
+          return new Date(a.date) - new Date(b.date)
+        case "release_date_desc":
+          return new Date(b.date) - new Date(a.date)
+        default:
+          return 0
+      }
+    })
+  }
 
   return ( 
   <section className="all-products">
