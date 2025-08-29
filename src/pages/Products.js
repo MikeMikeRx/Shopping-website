@@ -20,11 +20,16 @@ const Products = () => {
 
   useEffect(() => {
     const params = new URLSearchParams(location.search)
+
     const categoryFromQuery = params.get("category")
+    const isBestRated = params.get("bestRated") === "true"
 
     if (categoryFromQuery) {
       setSelectedCategories([categoryFromQuery])
     }
+
+    setIsBestRated(isBestRated)
+    
   }, [location.search, setSelectedCategories])
 
 
