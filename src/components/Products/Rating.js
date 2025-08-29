@@ -8,11 +8,13 @@ const Rating = ({ productId, category }) => {
     const [rating, setRating] = useState(0)
     
     useEffect(() => {
-      const savedRating = localStorage.getItem(`rating_${productId}`)
-      if (savedRating) {
-        setRating(Number(savedRating))
-      }
-    }, [productId])
+      const unsubscribe = onSnapshot(doc(db, category, productId), (snapshot) => {
+        if (snapshot.exists()) {
+          setRating(snapshot.data().rating || 0)
+        }
+      })
+      return () => unsubscribe()
+    }, [category, productId])
 
 
     const handleRating = (index) =>{
