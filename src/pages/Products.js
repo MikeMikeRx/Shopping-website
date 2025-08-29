@@ -28,8 +28,8 @@ const Products = () => {
       setSelectedCategories([categoryFromQuery])
     }
 
-    setIsBestRated(isBestRated)
-    
+    // setIsBestRated(isBestRated)
+
   }, [location.search, setSelectedCategories])
 
 
@@ -43,16 +43,11 @@ const Products = () => {
 
   if(isBestRated) {
     filteredData = filteredData
-    .map((product) => ({
-      ...product,
-      rating: Number(localStorage.getItem(`rating_${product.id}`) || 0)
-    }))
     .filter((product) => product.rating > 0)
     .sort((a,b) => b.rating - a.rating)
     .slice(0,9)
   } else {
-
-  filteredData.sort((a, b) => {
+    filteredData.sort((a, b) => {
       switch(selectedSort) {
         case "name_asc":
           return a.name.localeCompare(b.name)
