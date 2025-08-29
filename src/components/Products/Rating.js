@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import { doc, updateDoc, onSnapshot } from "firebase/firestore"
 import { db } from "../../firebase/config"
 
-const Rating = ({ productId }) => {
+const Rating = ({ productId, category }) => {
     const [rating, setRating] = useState(0)
     
     useEffect(() => {
