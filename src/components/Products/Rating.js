@@ -17,9 +17,12 @@ const Rating = ({ productId, category }) => {
     }, [category, productId])
 
 
-    const handleRating = (index) =>{
-      setRating(index + 1)
-      localStorage.setItem(`rating_${productId}`, index + 1)
+    const handleRating = async (index) =>{
+      const newRating = index + 1
+      await updateDoc(doc(db, category, productId), {
+        rating: newRating
+      })
+      setRating(newRating)
     }
 
     
