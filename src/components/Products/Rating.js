@@ -1,6 +1,8 @@
 import "./Rating.css"
 import { IoStar } from "react-icons/io5"
 import { useState, useEffect } from "react"
+import { doc, updateDoc, onSnapshot } from "firebase/firestore"
+import { db } from "../../firebase/config"
 
 const Rating = ({ productId }) => {
     const [rating, setRating] = useState(0)
@@ -22,9 +24,9 @@ const Rating = ({ productId }) => {
   return <div className="rating-bar">
     {[1,2,3,4,5].map((_, index) => (
       <button 
-      key={index}
-      onClick={() => handleRating(index)}
-      style={{ color: index < rating ? "gold" : "gray" }}
+        key={index}
+        onClick={() => handleRating(index)}
+        style={{ color: index < rating ? "gold" : "gray" }}
       >
         <IoStar size={24}/>
       </button>
