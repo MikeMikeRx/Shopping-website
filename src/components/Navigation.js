@@ -20,14 +20,12 @@ const Navigation = ({
   useEffect(() => {
     if(!allProducts) return
 
-    const ratings = allProducts.map(product => ({
-      id: product.id,
-      rating: Number(localStorage.getItem(`rating_${product.id}`) || 0)
-    }))
-    
-    ratings.sort((a,b) => b.rating - a.rating)
-    const topRated = ratings.filter(r => r.rating > 0).slice(0, 9)
-    setBestRatedIds(topRated.map(r => r.id))
+    const topRated = allProducts
+      .filter(p => p.rating > 0)
+      .sort((a,b) => b.rating - a.rating)
+      .slice(0,9)
+
+    setBestRatedIds(topRated.map(p => p.id))  
   }, [allProducts])
 
   const handleBestRated = () => {
