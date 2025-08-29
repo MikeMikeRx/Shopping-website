@@ -85,7 +85,7 @@ const Products = () => {
         </Link>
         <h2>{name}</h2>
         <p>Category: {type}</p>
-        <Rating productId={id}/>
+        <Rating productId={id} category={category} />
         <h3>Price: {price}$</h3>  
         <Link className="details-link" to={`/productdetail/${id}`}>Click here for more details</Link>                      
         <button className="order-btn">Order now</button>        
