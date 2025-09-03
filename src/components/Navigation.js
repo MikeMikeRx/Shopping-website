@@ -100,6 +100,7 @@ const Navigation = ({
       <ul className="nav-menu">
         <button onClick={handleBestRated}>Best Rated</button>
         <button onClick={() => navigate("products?newReleases=true")}>Hot New Releases</button>
+        <button>Climate Pledge Friendly</button>
       </ul>
     </div>    
   </nav>
