@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom"
 import { useState, useEffect } from "react"
 import fetchAllProducts from "../utils/fetchAllProducts"
 import productImages from "../images/productImages"
+import Rating from "../components/Products/Rating"
 
 const ProductDetail = () => {
   const { productId } = useParams()
