@@ -1,7 +1,6 @@
 import "./Navigation.css"
 import { NavLink, useNavigate, useLocation } from "react-router-dom"
 import { useState, useEffect } from "react"
-import navLinks from "../navlinks"
 
 const Navigation = ({ 
   selectedCategories, 
@@ -101,16 +100,7 @@ const Navigation = ({
       <ul className="nav-menu">
         <button onClick={handleBestRated}>Best Rated</button>
         <button onClick={() => navigate("products?newReleases=true")}>Hot New Releases</button>
-        {navLinks.map( (oneLink) => {
-          const {id, url, text} = oneLink
-            return <li key={id}>
-              <a href={url}>{text}</a>
-            </li>
-          })
-        }
       </ul>
-
-
     </div>    
   </nav>
    
