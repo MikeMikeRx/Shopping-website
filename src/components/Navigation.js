@@ -1,5 +1,5 @@
 import "./Navigation.css"
-import { NavLink, useNavigate, useLocation } from "react-router-dom"
+import { NavLink, Link, useNavigate, useLocation } from "react-router-dom"
 import { useState, useEffect } from "react"
 
 const Navigation = ({ 
@@ -98,9 +98,15 @@ const Navigation = ({
       )}
 
       <ul className="nav-menu">
-        <button onClick={handleBestRated}>Best Rated</button>
-        <button onClick={() => navigate("products?newReleases=true")}>Hot New Releases</button>
-        <button>Climate Pledge Friendly</button>
+        <li>
+          <Link to="/products?bestRated=true">Best Rated</Link>
+        </li>
+        <li>
+          <Link to="/products?newReleases=true">Hot New Releases</Link>
+        </li>
+        <li>
+          <Link to="/products?climatePledge=true">Climate Friendly X</Link>
+        </li>
       </ul>
     </div>    
   </nav>

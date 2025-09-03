@@ -58,17 +58,15 @@
 
 
 
-/* Dummy Links */
+/* Links */
 .nav-list .active + .checkbox-container {
     display: block;
 }
 
 .nav-menu {
-    margin-top: 25px;
-}
-
-.nav-menu {
-    list-style: none;    
+    margin-top: 55px;
+    margin-left: 0;
+    list-style: none;
 }
 
 .nav-menu a{

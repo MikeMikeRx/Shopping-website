@@ -17,8 +17,9 @@ const Products = () => {
   const location = useLocation()
   const isBestRated = new URLSearchParams(location.search).get("bestRated") === "true"
   const isNewRelease = new URLSearchParams(location.search).get("newReleases") === "true"
-  
+  const isClimatePledge = new URLSearchParams(location.search).get("climatePledge") === "true"
 
+  
   useEffect(() => {
     const params = new URLSearchParams(location.search)
 
