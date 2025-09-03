@@ -27,10 +27,6 @@ const Navigation = ({
     setBestRatedIds(topRated.map(p => p.id))  
   }, [allProducts])
 
-  const handleBestRated = () => {
-    navigate("products?bestRated=true")
-  }
-
   const isProductsPage = location.pathname === "/products"
   const isHomePage = location.pathname === "/"
 
