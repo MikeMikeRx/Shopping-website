@@ -28,8 +28,6 @@ const Products = () => {
       setSelectedCategories([categoryFromQuery])
     }
 
-    // setIsBestRated(isBestRated)
-
   }, [location.search, setSelectedCategories])
 
 
