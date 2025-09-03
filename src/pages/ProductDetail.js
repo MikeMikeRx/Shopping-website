@@ -54,7 +54,7 @@ const ProductDetail = () => {
           <div className="text">
           <h2>{product.name}</h2>          
           <p className="description">{product.description}</p>
-          <Rating productId={id} category={category} />
+          <Rating productId={product.id} category={product.category} />
           <p className="price">Our price: {product.price}$</p>
           <p>Category: {product.type}</p>
           <p>Currently in stock: {product.stock}</p>
