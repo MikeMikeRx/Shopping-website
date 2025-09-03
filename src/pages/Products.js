@@ -16,6 +16,7 @@ const Products = () => {
   const [searchTerm,setSearchTerm] = useState("")
   const location = useLocation()
   const isBestRated = new URLSearchParams(location.search).get("bestRated") === "true"
+  const isNewRelease = new URLSearchParams(location.search).get("newReleases") === "true"
   
 
   useEffect(() => {
@@ -27,8 +28,6 @@ const Products = () => {
     if (categoryFromQuery) {
       setSelectedCategories([categoryFromQuery])
     }
-
-    // setIsBestRated(isBestRated)
 
   }, [location.search, setSelectedCategories])
 
