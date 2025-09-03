@@ -45,6 +45,11 @@ const Products = () => {
     .filter((product) => product.rating > 0)
     .sort((a,b) => b.rating - a.rating)
     .slice(0,9)
+  } else if (isNewRelease) {
+    filteredData = filteredData
+    .filter((product) => product.date)
+    .sort((a,b) => new Date(b.date) - new Date(a.date))
+    .slice(0,9)
   } else {
     filteredData.sort((a, b) => {
       switch(selectedSort) {

@@ -100,7 +100,7 @@ const Navigation = ({
 
       <ul className="nav-menu">
         <button onClick={handleBestRated}>Best Rated</button>
-        <button onClick={() => navigate("proudcts?newRealises=true")}>Hot New Releases</button>
+        <button onClick={() => navigate("products?newReleases=true")}>Hot New Releases</button>
         {navLinks.map( (oneLink) => {
           const {id, url, text} = oneLink
             return <li key={id}>
