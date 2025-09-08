@@ -102,7 +102,7 @@ const Navigation = ({
           <Link to="/products?newReleases=true">Hot New Releases</Link>
         </li>
         <li>
-          <Link to="/products?climatePledge=true">Climate Friendly X</Link>
+          <Link to="/products?climatePledge=true">Climate Friendly</Link>
         </li>
       </ul>
     </div>    

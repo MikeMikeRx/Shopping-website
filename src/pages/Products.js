@@ -17,7 +17,7 @@ const Products = () => {
   const location = useLocation()
   const isBestRated = new URLSearchParams(location.search).get("bestRated") === "true"
   const isNewRelease = new URLSearchParams(location.search).get("newReleases") === "true"
-  const isClimatePledge = new URLSearchParams(location.search).get("climatePledge") === "true"
+  const isClimateFriendly = new URLSearchParams(location.search).get("climatePledge") === "true"
 
   
   useEffect(() => {
@@ -51,6 +51,8 @@ const Products = () => {
     .filter((product) => product.date)
     .sort((a,b) => new Date(b.date) - new Date(a.date))
     .slice(0,9)
+  } else if (isClimateFriendly) {
+    filteredData = filteredData.filter(product => product.eco === true)
   } else {
     filteredData.sort((a, b) => {
       switch(selectedSort) {
