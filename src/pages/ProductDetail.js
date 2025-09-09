@@ -61,8 +61,7 @@ const ProductDetail = () => {
             <p className="eco-friendly"><PiLeafFill /> Made of eco-friendly material: {product.material}</p>
           )}
 
-          <p className="energy"><MdEnergySavingsLeaf /> Energy Efficient Level: {product.energy}</p>
-
+          <p className={`energy-${product.energy}`}><MdEnergySavingsLeaf /> Energy Efficient Level: {product.energy}</p>
           <Rating productId={product.id} category={product.category} />         
           <p className="price">Our price: {product.price}$</p>
           <p>Currently in stock: {product.stock}</p>
