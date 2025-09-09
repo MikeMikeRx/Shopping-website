@@ -57,7 +57,7 @@ const ProductDetail = () => {
           <p className="description">{product.description}</p>
 
           {product.eco && (
-            <p className="eco-friendly">Made of eco-friendly material: {product.material}</p>
+            <p className="eco-friendly"><PiLeafFill /> Made of eco-friendly material: {product.material}</p>
           )}
 
           <Rating productId={product.id} category={product.category} />         
