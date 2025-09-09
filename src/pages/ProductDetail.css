@@ -1,15 +1,11 @@
 .product-detail {
-    /* width: 50%; */
-
     width: 750px;
     height: 450px;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    /* margin: 0px auto; */
     margin-top: 15px;
     margin-left: 135px;
     background: white;
@@ -39,13 +35,11 @@
 }
 
 .text .description {
-    /* font-weight: bold; */
     margin: 10px;
 }
 
 .text .price{
     font-size: 20px;
-    /* margin-bottom: 5px; */
     margin: 8px 0px;
 }
 
