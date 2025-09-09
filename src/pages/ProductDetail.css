@@ -44,17 +44,28 @@
 }
 
 /* Energy Efficient */
-.energy-A{
-    color: rgb(0, 0, 165);
+.power-A{
+    color: green;
+}
+.power-B{
+    color: rgb(0, 184, 0);
+}
+.power-C{
+    color: rgb(144, 209, 47);
+}
+.power-D{
+    color: rgb(194, 194, 38);
+}
+.power-E{
+    color: rgb(240, 176, 58);
+}
+.power-F{
+    color: rgb(211, 137, 0);
+}
+.power-G{
+    color: rgb(211, 31, 31);
 }
 
-.energy-B{
-    color: rgb(165, 107, 0);
-}
-
-.energy-C{
-    color: rgb(187, 1, 1);
-}
 
 .text .price{
     font-size: 20px;
