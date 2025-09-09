@@ -54,6 +54,7 @@ const ProductDetail = () => {
           <div className="text">
           <h2>{product.name}</h2>          
           <p className="description">{product.description}</p>
+          <p className="eco-friendly">Made of eco-friendly material: {product.material}</p>
           <Rating productId={product.id} category={product.category} />
           <p className="price">Our price: {product.price}$</p>
           <p>Currently in stock: {product.stock}</p>
