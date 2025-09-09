@@ -56,11 +56,11 @@ const ProductDetail = () => {
           <div className="text">
           <h2>{product.name}</h2>          
           <p className="description">{product.description}</p>
-
           {product.eco && (
-            <p className="eco-friendly"><PiLeafFill /> Made of eco-friendly material: {product.material}</p>
+            <p className="eco-friendly">
+              <PiLeafFill /> Made of eco-friendly material: {product.material}
+            </p>
           )}
-
           <p className={`energy-${product.energy}`}><MdEnergySavingsLeaf /> Energy Efficient Level: {product.energy}</p>
           <Rating productId={product.id} category={product.category} />         
           <p className="price">Our price: {product.price}$</p>
