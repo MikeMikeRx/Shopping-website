@@ -43,6 +43,19 @@
     margin: 5px;
 }
 
+/* Energy Efficient */
+.energy-A{
+    color: rgb(0, 0, 165);
+}
+
+.energy-B{
+    color: rgb(165, 107, 0);
+}
+
+.energy-C{
+    color: rgb(187, 1, 1);
+}
+
 .text .price{
     font-size: 20px;
     margin: 8px 0px;
