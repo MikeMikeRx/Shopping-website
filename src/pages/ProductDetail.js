@@ -61,7 +61,7 @@ const ProductDetail = () => {
               <PiLeafFill /> Made of eco-friendly material: {product.material}
             </p>
           )}
-          {product.energy && (
+          {product.power && (
             <p className={`power-${product.power}`}><MdEnergySavingsLeaf /> Energy Efficient Level: {product.power}</p>
           )}                    
           <Rating productId={product.id} category={product.category} />         
