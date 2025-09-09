@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import fetchAllProducts from "../utils/fetchAllProducts"
 import productImages from "../images/productImages"
 import Rating from "../components/Products/Rating"
+import { PiLeafFill } from "react-icons/pi"
 
 const ProductDetail = () => {
   const { productId } = useParams()
@@ -54,7 +55,7 @@ const ProductDetail = () => {
           <div className="text">
           <h2>{product.name}</h2>          
           <p className="description">{product.description}</p>
-          
+
           {product.eco && (
             <p className="eco-friendly">Made of eco-friendly material: {product.material}</p>
           )}
