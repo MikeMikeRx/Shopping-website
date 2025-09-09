@@ -5,6 +5,7 @@ import fetchAllProducts from "../utils/fetchAllProducts"
 import productImages from "../images/productImages"
 import Rating from "../components/Products/Rating"
 import { PiLeafFill } from "react-icons/pi"
+import { MdEnergySavingsLeaf } from "react-icons/md"
 
 const ProductDetail = () => {
   const { productId } = useParams()
