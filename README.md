@@ -34,3 +34,15 @@ It supports browsing, filtering, and sorting products, along with extra features
 1. Clone the repository:  
 
    git clone https://github.com/MikeMikeRx/Shopping-website.git
+
+2. Install dependecies:
+
+    npm install
+
+3. Set up Firebase:
+
+    src/firebase/config.js
+
+4. Run the development server:
+
+    npm start
