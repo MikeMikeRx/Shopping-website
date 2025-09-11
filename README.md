@@ -31,8 +31,8 @@ It supports browsing, filtering, and sorting products, along with extra features
 
 ## 📸 Screenshots
 
-    ![shot-1](./public/screenshots/shot-1.png)
-    ![shot-2](./public/screenshots/shot-2.png)
+    ![shot-1](./screenshots/shot-1.png)
+    ![shot-2](./screenshots/shot-2.png)
 
 ---
 
