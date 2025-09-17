@@ -15,25 +15,24 @@ const Products = () => {
     allProducts, 
     error 
   } = useOutletContext()
+
   const [searchTerm,setSearchTerm] = useState("")
   const location = useLocation()
+  const params = new URLSearchParams(location.search)
+
   const isBestRated = new URLSearchParams(location.search).get("bestRated") === "true"
   const isNewRelease = new URLSearchParams(location.search).get("newReleases") === "true"
   const isClimateFriendly = new URLSearchParams(location.search).get("climatePledge") === "true"
-
+  const categoryFromQuery = params.get("category")
   
   useEffect(() => {
-    const params = new URLSearchParams(location.search)
-    const categoryFromQuery = params.get("category")
-
     if (categoryFromQuery) {
       setSelectedCategories([categoryFromQuery])
     } else {
       setSelectedCategories([])
       setSelectedTypes([])
     }
-
-  }, [location.search, setSelectedCategories])
+  }, [categoryFromQuery, setSelectedCategories, setSelectedTypes])
 
 
   let filteredData = allProducts
