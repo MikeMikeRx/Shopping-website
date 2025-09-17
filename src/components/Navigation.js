@@ -106,6 +106,27 @@ const Navigation = ({
               ))}
             </>
           )}
+
+          {selectedCategories.includes("clothes") && (
+            <>
+              <h3>Clothes</h3>
+              {["hoody", "jacket", "jeans"].map((subcategory) => (
+                <div key={subcategory}>
+                  <input
+                    className="checkbox"
+                    type="checkbox"
+                    name={subcategory}
+                    id={`filter-${subcategory}`}
+                    checked={selectedCategories.includes(subcategory)}
+                    onChange={handleChange}
+                  />
+                  <label htmlFor={`filter-${subcategory}`}>
+                    {subcategory[0].toUpperCase() + subcategory.slice(1)}
+                  </label>
+                </div>
+              ))}
+            </>
+          )}
         </div>
       )}
 
