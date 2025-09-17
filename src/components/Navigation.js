@@ -78,7 +78,14 @@ const Navigation = ({
                   name={subcategory}
                   id={`filter-${subcategory}`}
                   checked={selectedTypes.includes(subcategory)}
-                  onChange={handleChange}
+                  onChange={(e)=>{
+                    const {name,checked} = e.target
+                    if (checked) {
+                      setSeletedTypes((prev)=>[...prev,name])
+                    } else {
+                      setSeletedTypes((prev) => prev.filter((t)=> t!==name))
+                    }
+                  }}
                 />
                 <label htmlFor={`filter-${subcategory}`}>
                   {subcategory[0].toUpperCase() + subcategory.slice(1)}
