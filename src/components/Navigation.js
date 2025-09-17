@@ -71,15 +71,17 @@ const Navigation = ({
 
       {isHomePage && (
         <ul className="category-links">
-          <li><Link/></li>
-          <li><Link/></li>
-          <li><Link/></li>
+          <li>
+            <Link to="products?category=electronics">Electronics</Link>
+            </li>
+          <li>
+            <Link to="products?category=furniture">Furniture</Link>
+            </li>
+          <li>
+            <Link to="products?category=clothes">Clothes</Link>
+          </li>
         </ul>
       )}
-
-
-
-
 
       {isProductsPage && (
         <div className="sort-container">
