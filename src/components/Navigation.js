@@ -19,7 +19,7 @@ const Navigation = ({
 
   const location = useLocation()
   const isProductsPage = location.pathname === "/products"
-  // const isHomePage = location.pathname === "/"
+  const isHomePage = location.pathname === "/"
 
   return <nav className={ isVisible ? "nav-visible" : "" }>
     <div className="menu">
@@ -29,11 +29,13 @@ const Navigation = ({
           <NavLink to="products" className={({ isActive }) => isActive ? "active" : ""}>Products</NavLink> 
         </div>
 
+      {isHomePage && (
         <ul className="category-links">
           <li><Link to="products?category=electronics">Electronics</Link></li>
           <li><Link to="products?category=furniture">Furniture</Link></li>
           <li><Link to="products?category=clothes">Clothes</Link></li>
         </ul>
+      )} 
 
 
       {isProductsPage && (
