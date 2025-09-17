@@ -69,6 +69,16 @@ const Navigation = ({
         </div>
       )}
 
+      {isHomePage && (
+        <ul className="category-links">
+          
+        </ul>
+      )}
+
+
+
+
+
       {isProductsPage && (
         <div className="sort-container">
           <h2>Sort products by:</h2>
