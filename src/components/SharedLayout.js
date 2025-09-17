@@ -59,7 +59,9 @@ const SharedLayout = () => {
           <Outlet 
           context={{ 
             selectedCategories, 
-            setSelectedCategories, 
+            setSelectedCategories,
+            selectedTypes,
+            setSelectedTypes, 
             selectedSort, 
             setSelectedSort, 
             allProducts,
