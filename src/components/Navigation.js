@@ -37,7 +37,6 @@ const Navigation = ({
         </ul>
       )} 
 
-
       {isProductsPage && (
         <div className="checkbox-container">
 
@@ -47,7 +46,7 @@ const Navigation = ({
               : selectedCategories
           ).map((category) => (
             <div key={category}>
-              <h3>{category[0].toUpperCase() + category.slice(1)}</h3>
+              <h4>{category[0].toUpperCase() + category.slice(1)}</h4>
               {subcategoriesMap[category].map((subcategory) => (
                 <div key={subcategory}>
                   <input
