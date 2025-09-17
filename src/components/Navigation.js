@@ -1,46 +1,19 @@
 import "./Navigation.css"
 import { NavLink, Link, useNavigate, useLocation } from "react-router-dom"
-import { useState, useEffect } from "react"
 
 const Navigation = ({ 
   selectedCategories,
   selectedTypes,
   setSelectedTypes, 
-  onCategoryChange, 
   isVisible, 
   onMenuToggle, 
   selectedSort, 
-  onSortChange,
-  allProducts 
+  onSortChange 
 }) => {
 
   const location = useLocation()
-  const navigate = useNavigate()
-  const [bestRatedIds, setBestRatedIds] = useState([])
-
-  useEffect(() => {
-    if(!allProducts) return
-
-    const topRated = allProducts
-      .filter(p => p.rating > 0)
-      .sort((a,b) => b.rating - a.rating)
-      .slice(0,9)
-
-    setBestRatedIds(topRated.map(p => p.id))  
-  }, [allProducts])
-
-
   const isProductsPage = location.pathname === "/products"
   const isHomePage = location.pathname === "/"
-
-  const handleChange = (e) => {
-    const { name, checked } = e.target
-    onCategoryChange(name, checked)
-  }
-
-  const handleSortChange = (e) => {
-    onSortChange(e.target.value)
-  }
 
   return <nav className={ isVisible ? "nav-visible" : "" }>
     <div className="menu">
@@ -51,15 +24,9 @@ const Navigation = ({
         </div>
 
         <ul className="category-links">
-          <li>
-            <Link to="products?category=electronics">Electronics</Link>
-            </li>
-          <li>
-            <Link to="products?category=furniture">Furniture</Link>
-            </li>
-          <li>
-            <Link to="products?category=clothes">Clothes</Link>
-          </li>
+          <li><Link to="products?category=electronics">Electronics</Link></li>
+          <li><Link to="products?category=furniture">Furniture</Link></li>
+          <li><Link to="products?category=clothes">Clothes</Link></li>
         </ul>
 
 
@@ -178,15 +145,9 @@ const Navigation = ({
       )}
 
       <ul className="nav-menu">
-        <li>
-          <Link to="/products?bestRated=true">Best Rated</Link>
-        </li>
-        <li>
-          <Link to="/products?newReleases=true">Hot New Releases</Link>
-        </li>
-        <li>
-          <Link to="/products?climatePledge=true">Climate Friendly</Link>
-        </li>
+        <li><Link to="/products?bestRated=true">Best Rated</Link></li>
+        <li><Link to="/products?newReleases=true">Hot New Releases</Link></li>
+        <li><Link to="/products?climatePledge=true">Climate Friendly</Link></li>
       </ul>
     </div>    
   </nav>
