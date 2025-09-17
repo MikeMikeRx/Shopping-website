@@ -47,6 +47,7 @@ const SharedLayout = () => {
       <Navigation 
       selectedCategories={selectedCategories}
       selectedTypes={selectedTypes}
+      setSelectedTypes={setSelectedTypes}
       onCategoryChange={handleCategoryChange}
       onMenuToggle={handleMenuToggle}
       isVisible={menuVisible}
