@@ -3,7 +3,8 @@ import { NavLink, Link, useNavigate, useLocation } from "react-router-dom"
 import { useState, useEffect } from "react"
 
 const Navigation = ({ 
-  selectedCategories, 
+  selectedCategories,
+  selectedTypes, 
   onCategoryChange, 
   isVisible, 
   onMenuToggle, 
