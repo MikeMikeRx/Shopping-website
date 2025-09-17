@@ -71,7 +71,9 @@ const Navigation = ({
 
       {isHomePage && (
         <ul className="category-links">
-          
+          <li><Link/></li>
+          <li><Link/></li>
+          <li><Link/></li>
         </ul>
       )}
 
