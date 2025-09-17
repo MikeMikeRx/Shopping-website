@@ -68,7 +68,7 @@ const Navigation = ({
 
           {selectedCategories.includes("electronics") && (
             <>
-            <h3>Electronics:</h3>
+            <p>Category:</p>
             {["Laptop", "Smartphone", "Smart Tv"].map((subcategory) => (
               <div key={subcategory}>
                 <input
@@ -96,7 +96,7 @@ const Navigation = ({
 
           {selectedCategories.includes("furniture") && (
             <>
-              <h3>Furniture:</h3>
+              <p>Category:</p>
               {["Chair", "Table", "Armchair"].map((subcategory) => (
                 <div key={subcategory}>
                   <input
@@ -124,7 +124,7 @@ const Navigation = ({
 
           {selectedCategories.includes("clothes") && (
             <>
-              <h3>Clothes:</h3>
+              <p>Category:</p>
               {["Hoody", "Jacket", "Jeans"].map((subcategory) => (
                 <div key={subcategory}>
                   <input
