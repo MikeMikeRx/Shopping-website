@@ -33,11 +33,18 @@ const Products = () => {
   }, [location.search, setSelectedCategories])
 
 
-  let filteredData = allProducts.filter((product) =>
+  let filteredData = allProducts
+  .filter((product) =>
     selectedCategories.length > 0
       ? selectedCategories.includes(product.category)
       : true
-  ).filter((product) =>
+  )
+  .filter((product) =>
+    selectedCategories.length > 0
+      ? selectedCategories.includes(product.type) || selectedCategories.includes(product.category)
+      : true
+  )
+  .filter((product) =>
     product.name.toLowerCase().includes(searchTerm.toLowerCase())
   )
 
