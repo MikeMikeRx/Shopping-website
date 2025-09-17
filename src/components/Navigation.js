@@ -13,7 +13,7 @@ const Navigation = ({
 
   const location = useLocation()
   const isProductsPage = location.pathname === "/products"
-  const isHomePage = location.pathname === "/"
+  // const isHomePage = location.pathname === "/"
 
   return <nav className={ isVisible ? "nav-visible" : "" }>
     <div className="menu">

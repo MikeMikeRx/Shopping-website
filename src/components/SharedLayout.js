@@ -19,9 +19,9 @@ const SharedLayout = () => {
       try {
         const products = await fetchAllProducts()
         setAllProducts(products)       
-        } catch {
+        } catch (err) {
           setError("Failed to load products")
-          console.log(error)
+          console.log("Error fetching products:", err)
         }
       }
     fetchData()
@@ -33,48 +33,45 @@ const SharedLayout = () => {
     )
   }
 
-  const handleSortChange = (sortValue) => {
-    setSelectedSort(sortValue)
-  }
-
   const handleMenuToggle = () => {
     setMenuVisible(prev => !prev)
   }
 
-  return <div className="layout">
-    <Header onMenuToggle={handleMenuToggle} menuVisible={menuVisible}/>
-    <div className="main-body-content">
-      <Navigation 
-      selectedCategories={selectedCategories}
-      selectedTypes={selectedTypes}
-      setSelectedTypes={setSelectedTypes}
-      onCategoryChange={handleCategoryChange}
-      onMenuToggle={handleMenuToggle}
-      isVisible={menuVisible}
-      selectedSort={selectedSort}
-      onSortChange={setSelectedSort}
-      allProducts={allProducts}
-      />
-      <div className="content-wrapper">
-        <main className="main-content">
-          <Outlet 
-          context={{ 
-            selectedCategories, 
-            setSelectedCategories,
-            selectedTypes,
-            setSelectedTypes, 
-            selectedSort, 
-            setSelectedSort, 
-            allProducts,
-            error
-            }}
-          />
-        </main>
-      </div>      
+  return (
+    <div className="layout">
+      <Header onMenuToggle={handleMenuToggle} menuVisible={menuVisible}/>
+      <div className="main-body-content">
+        <Navigation 
+        selectedCategories={selectedCategories}
+        selectedTypes={selectedTypes}
+        setSelectedTypes={setSelectedTypes}
+        onCategoryChange={handleCategoryChange}
+        onMenuToggle={handleMenuToggle}
+        isVisible={menuVisible}
+        selectedSort={selectedSort}
+        onSortChange={setSelectedSort}
+        allProducts={allProducts}
+        />
+        <div className="content-wrapper">
+          <main className="main-content">
+            <Outlet 
+            context={{ 
+              selectedCategories, 
+              setSelectedCategories,
+              selectedTypes,
+              setSelectedTypes, 
+              selectedSort, 
+              setSelectedSort, 
+              allProducts,
+              error
+              }}
+            />
+          </main>
+        </div>      
+      </div>
+      <Footer />
     </div>
-    <Footer />
-  </div>
-
+  )
 }
 
 export default SharedLayout
