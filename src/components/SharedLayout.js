@@ -8,6 +8,7 @@ import fetchAllProducts from "../utils/fetchAllProducts"
 
 const SharedLayout = () => {
   const [selectedCategories, setSelectedCategories] = useState([])
+  const [selectedTypes, setSelectedTypes] = useState([])
   const [menuVisible, setMenuVisible] = useState(false)
   const [selectedSort, setSelectedSort] = useState("name_asc")
   const [allProducts, setAllProducts] = useState([])
