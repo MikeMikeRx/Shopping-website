@@ -5,7 +5,7 @@ import { useState, useEffect } from "react"
 const Navigation = ({ 
   selectedCategories,
   selectedTypes,
-  setSeletedTypes, 
+  setSelectedTypes, 
   onCategoryChange, 
   isVisible, 
   onMenuToggle, 
@@ -81,9 +81,9 @@ const Navigation = ({
                   onChange={(e)=>{
                     const {name,checked} = e.target
                     if (checked) {
-                      setSeletedTypes((prev)=>[...prev,name])
+                      setSelectedTypes((prev)=>[...prev,name])
                     } else {
-                      setSeletedTypes((prev) => prev.filter((t)=> t!==name))
+                      setSelectedTypes((prev) => prev.filter((t)=> t!==name))
                     }
                   }}
                 />
