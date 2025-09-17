@@ -42,9 +42,9 @@ const Products = () => {
       : true
   )
   .filter((product) =>
-    selectedCategories.length > 0
-      ? selectedCategories.includes(product.type) || selectedCategories.includes(product.category)
-      : true
+    selectedTypes.length > 0
+    ? selectedTypes.includes(product.type)
+    : true
   )
   .filter((product) =>
     product.name.toLowerCase().includes(searchTerm.toLowerCase())
