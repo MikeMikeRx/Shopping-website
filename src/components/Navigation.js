@@ -70,7 +70,7 @@ const Navigation = ({
           {selectedCategories.includes("electronics") && (
             <>
             <h3>Electronics</h3>
-            {["Laptop", "Smarthone", "Smart Tv"].map((subcategory) => (
+            {["Laptop", "Smartphone", "Smart Tv"].map((subcategory) => (
               <div key={subcategory}>
                 <input
                   className="checkbox" 
@@ -106,7 +106,14 @@ const Navigation = ({
                     name={subcategory}
                     id={`filter-${subcategory}`}
                     checked={selectedTypes.includes(subcategory)}
-                    onChange={handleChange}
+                    onChange={(e)=>{
+                      const {name,checked} = e.target
+                      if (checked) {
+                        setSelectedTypes((prev)=>[...prev,name])
+                      } else {
+                        setSelectedTypes((prev) => prev.filter((t)=> t!==name))
+                      }
+                    }}
                   />
                   <label htmlFor={`filter-${subcategory}`}>
                     {subcategory[0].toUpperCase() + subcategory.slice(1)}
