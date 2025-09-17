@@ -34,7 +34,7 @@ const Products = () => {
     }
   }, [categoryFromQuery, setSelectedCategories, setSelectedTypes])
 
-
+// filters
   let filteredData = allProducts
   .filter((product) =>
     selectedCategories.length > 0
@@ -49,7 +49,7 @@ const Products = () => {
   .filter((product) =>
     product.name.toLowerCase().includes(searchTerm.toLowerCase())
   )
-
+// special filters
   if(isBestRated) {
     filteredData = filteredData
     .filter((product) => product.rating > 0)
@@ -65,20 +65,13 @@ const Products = () => {
   } else {
     filteredData.sort((a, b) => {
       switch(selectedSort) {
-        case "name_asc":
-          return a.name.localeCompare(b.name)
-        case "name_desc":
-          return b.name.localeCompare(a.name)
-        case "price_asc":
-          return a.price - b.price
-        case "price_desc":
-          return b.price - a.price
-        case "release_date_asc":
-          return new Date(a.date) - new Date(b.date)
-        case "release_date_desc":
-          return new Date(b.date) - new Date(a.date)
-        default:
-          return 0
+        case "name_asc": return a.name.localeCompare(b.name)
+        case "name_desc": return b.name.localeCompare(a.name)
+        case "price_asc": return a.price - b.price
+        case "price_desc": return b.price - a.price
+        case "release_date_asc": return new Date(a.date) - new Date(b.date)
+        case "release_date_desc": return new Date(b.date) - new Date(a.date)
+        default: return 0
       }
     })
   }
