@@ -59,7 +59,7 @@
 
 
 /* Links */
-.nav-list .active + .checkbox-container {
+.nav-list .active + .checkbox-container{
     display: block;
 }
 

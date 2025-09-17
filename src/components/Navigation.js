@@ -69,20 +69,6 @@ const Navigation = ({
         </div>
       )}
 
-      {isHomePage && (
-        <ul className="category-links">
-          <li>
-            <Link to="products?category=electronics">Electronics</Link>
-            </li>
-          <li>
-            <Link to="products?category=furniture">Furniture</Link>
-            </li>
-          <li>
-            <Link to="products?category=clothes">Clothes</Link>
-          </li>
-        </ul>
-      )}
-
       {isProductsPage && (
         <div className="sort-container">
           <h2>Sort products by:</h2>
@@ -106,6 +92,20 @@ const Navigation = ({
             </label>
           ))}          
         </div>
+      )}
+
+      {isHomePage && (
+        <ul className="category-links">
+          <li>
+            <Link to="products?category=electronics">Electronics</Link>
+            </li>
+          <li>
+            <Link to="products?category=furniture">Furniture</Link>
+            </li>
+          <li>
+            <Link to="products?category=clothes">Clothes</Link>
+          </li>
+        </ul>
       )}
 
       <ul className="nav-menu">
