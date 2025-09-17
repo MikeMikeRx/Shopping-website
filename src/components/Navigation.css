@@ -7,6 +7,12 @@
     color: #01295e;
 }
 
+.main-menu a:hover{
+    /* transform: scale(1.15); */
+    transition: all 0.2s;
+    color: #013c8a;
+}
+
 .active {
     transform: scale(1.1);
 }

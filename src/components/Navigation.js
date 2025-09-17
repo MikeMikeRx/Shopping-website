@@ -48,6 +48,19 @@ const Navigation = ({
           <NavLink to="products" className={({ isActive }) => isActive ? "active" : ""}>Products</NavLink> 
         </div>
 
+        <ul className="category-links">
+          <li>
+            <Link to="products?category=electronics">Electronics</Link>
+            </li>
+          <li>
+            <Link to="products?category=furniture">Furniture</Link>
+            </li>
+          <li>
+            <Link to="products?category=clothes">Clothes</Link>
+          </li>
+        </ul>
+
+
       {isProductsPage && (
         <div className="checkbox-container">
           <h2>Filter & Sort:</h2>
@@ -92,20 +105,6 @@ const Navigation = ({
             </label>
           ))}          
         </div>
-      )}
-
-      {isHomePage && (
-        <ul className="category-links">
-          <li>
-            <Link to="products?category=electronics">Electronics</Link>
-            </li>
-          <li>
-            <Link to="products?category=furniture">Furniture</Link>
-            </li>
-          <li>
-            <Link to="products?category=clothes">Clothes</Link>
-          </li>
-        </ul>
       )}
 
       <ul className="nav-menu">
