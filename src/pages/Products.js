@@ -8,7 +8,9 @@ import productImages from "../images/productImages"
 const Products = () => {
   const { 
     selectedCategories, 
-    setSelectedCategories, 
+    setSelectedCategories,
+    selectedTypes,
+    setSelectedTypes, 
     selectedSort, 
     allProducts, 
     error 
