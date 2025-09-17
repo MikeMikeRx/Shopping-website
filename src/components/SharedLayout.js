@@ -42,28 +42,28 @@ const SharedLayout = () => {
       <Header onMenuToggle={handleMenuToggle} menuVisible={menuVisible}/>
       <div className="main-body-content">
         <Navigation 
-        selectedCategories={selectedCategories}
-        selectedTypes={selectedTypes}
-        setSelectedTypes={setSelectedTypes}
-        onCategoryChange={handleCategoryChange}
-        onMenuToggle={handleMenuToggle}
-        isVisible={menuVisible}
-        selectedSort={selectedSort}
-        onSortChange={setSelectedSort}
-        allProducts={allProducts}
+          selectedCategories={selectedCategories}
+          selectedTypes={selectedTypes}
+          setSelectedTypes={setSelectedTypes}
+          onCategoryChange={handleCategoryChange}
+          onMenuToggle={handleMenuToggle}
+          isVisible={menuVisible}
+          selectedSort={selectedSort}
+          onSortChange={setSelectedSort}
+          allProducts={allProducts}
         />
         <div className="content-wrapper">
           <main className="main-content">
             <Outlet 
-            context={{ 
-              selectedCategories, 
-              setSelectedCategories,
-              selectedTypes,
-              setSelectedTypes, 
-              selectedSort, 
-              setSelectedSort, 
-              allProducts,
-              error
+              context={{ 
+                selectedCategories, 
+                setSelectedCategories,
+                selectedTypes,
+                setSelectedTypes, 
+                selectedSort, 
+                setSelectedSort, 
+                allProducts,
+                error
               }}
             />
           </main>
