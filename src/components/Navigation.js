@@ -78,6 +78,9 @@ const Navigation = ({
                   checked={selectedCategories.includes(subcategory)}
                   onChange={handleChange}
                 />
+                <label htmlFor={`filter-${subcategory}`}>
+                  {subcategory[0].toUpperCase() + subcategory.slice(1)}
+                </label>
               </div>
             ))}
             </>
