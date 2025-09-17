@@ -26,8 +26,9 @@
     margin-top: 15px;
 }
 
-.checkbox-container h2{
-    font-size: 20px;
+.checkbox-container p{
+    margin-top: 10px;
+    font-size: 16px;
     margin-bottom: 10px;
 }
 
@@ -45,6 +46,7 @@
     flex-direction: column;
     justify-items: center;
     margin-top: 20px;
+    margin-left: -10px;
     font-size: 16px;
 }
 
@@ -53,8 +55,8 @@
     gap: 5px;
 }
 
-.sort-container h2{
-    font-size: 20px;
+.sort-container p{
+    font-size: 16px;
     margin-bottom: 10px;
 }
 
