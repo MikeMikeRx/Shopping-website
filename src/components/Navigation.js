@@ -154,7 +154,7 @@ const Navigation = ({
 
       {isProductsPage && (
         <div className="sort-container">
-          <h2>Sort products by:</h2>
+          <p>Sort products by:</p>
           {[
             { value: "name_asc", label: "Name A-Z" },
             { value: "name_desc", label: "Name Z-A" },
