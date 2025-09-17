@@ -4,7 +4,8 @@ import { useState, useEffect } from "react"
 
 const Navigation = ({ 
   selectedCategories,
-  selectedTypes, 
+  selectedTypes,
+  setSeletedTypes, 
   onCategoryChange, 
   isVisible, 
   onMenuToggle, 
