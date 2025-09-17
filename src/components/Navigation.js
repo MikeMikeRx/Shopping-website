@@ -76,7 +76,7 @@ const Navigation = ({
                   type="checkbox" 
                   name={subcategory}
                   id={`filter-${subcategory}`}
-                  checked={selectedCategories.includes(subcategory)}
+                  checked={selectedTypes.includes(subcategory)}
                   onChange={handleChange}
                 />
                 <label htmlFor={`filter-${subcategory}`}>
@@ -97,7 +97,7 @@ const Navigation = ({
                     type="checkbox"
                     name={subcategory}
                     id={`filter-${subcategory}`}
-                    checked={selectedCategories.includes(subcategory)}
+                    checked={selectedTypes.includes(subcategory)}
                     onChange={handleChange}
                   />
                   <label htmlFor={`filter-${subcategory}`}>
@@ -118,7 +118,7 @@ const Navigation = ({
                     type="checkbox"
                     name={subcategory}
                     id={`filter-${subcategory}`}
-                    checked={selectedCategories.includes(subcategory)}
+                    checked={selectedTypes.includes(subcategory)}
                     onChange={handleChange}
                   />
                   <label htmlFor={`filter-${subcategory}`}>
