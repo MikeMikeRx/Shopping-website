@@ -1,5 +1,5 @@
 import "./Navigation.css"
-import { NavLink, Link, useNavigate, useLocation } from "react-router-dom"
+import { NavLink, Link, useLocation } from "react-router-dom"
 
 const Navigation = ({ 
   selectedCategories,
