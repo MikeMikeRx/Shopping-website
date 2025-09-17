@@ -65,11 +65,10 @@ const Navigation = ({
 
       {isProductsPage && (
         <div className="checkbox-container">
-          <h2>Filter & Sort:</h2>
 
           {selectedCategories.includes("electronics") && (
             <>
-            <h3>Electronics</h3>
+            <h3>Electronics:</h3>
             {["Laptop", "Smartphone", "Smart Tv"].map((subcategory) => (
               <div key={subcategory}>
                 <input
@@ -97,7 +96,7 @@ const Navigation = ({
 
           {selectedCategories.includes("furniture") && (
             <>
-              <h3>Furniture</h3>
+              <h3>Furniture:</h3>
               {["Chair", "Table", "Armchair"].map((subcategory) => (
                 <div key={subcategory}>
                   <input
@@ -125,7 +124,7 @@ const Navigation = ({
 
           {selectedCategories.includes("clothes") && (
             <>
-              <h3>Clothes</h3>
+              <h3>Clothes:</h3>
               {["Hoody", "Jacket", "Jeans"].map((subcategory) => (
                 <div key={subcategory}>
                   <input
