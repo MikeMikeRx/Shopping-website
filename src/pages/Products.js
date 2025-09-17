@@ -81,9 +81,7 @@ const Products = () => {
     <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
     {error && <div className="error-message">{error}</div>}
 
-    {filteredData.map((oneProduct) => {
-      const { id, name, category, price,type, img } = oneProduct    
-      return (
+    {filteredData.map(({ id, name, category, price, type, img }) => (             
       <div key={id} className="one-product">
         <Link className="img-link" to={`/productdetail/${id}`}>
           <img 
@@ -96,11 +94,12 @@ const Products = () => {
         <p>Category: {type}</p>
         <Rating productId={id} category={category} />
         <h3>Price: {price}$</h3>  
-        <Link className="details-link" to={`/productdetail/${id}`}>Click here for more details</Link>                      
+        <Link className="details-link" to={`/productdetail/${id}`}>
+          Click here for more details
+        </Link>                      
         <button className="order-btn">Order now</button>        
-      </div>
-      )
-    })}
+      </div>      
+    ))}
   </section>
   )
 }
