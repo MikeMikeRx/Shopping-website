@@ -1,6 +1,12 @@
 import "./Navigation.css"
 import { NavLink, Link, useLocation } from "react-router-dom"
 
+const subcategoriesMap = {
+  electronics: ["Laptop", "Smartphone", "Smart Tv"],
+  furniture: ["Chair", "Table", "Armchair"],
+  clothes: ["Hoody", "Jacket", "Jeans"],
+}
+
 const Navigation = ({ 
   selectedCategories,
   selectedTypes,
@@ -33,38 +39,14 @@ const Navigation = ({
       {isProductsPage && (
         <div className="checkbox-container">
 
-          {selectedCategories.includes("electronics") && (
-            <>
-            <p>Category:</p>
-            {["Laptop", "Smartphone", "Smart Tv"].map((subcategory) => (
-              <div key={subcategory}>
-                <input
-                  className="checkbox" 
-                  type="checkbox" 
-                  name={subcategory}
-                  id={`filter-${subcategory}`}
-                  checked={selectedTypes.includes(subcategory)}
-                  onChange={(e)=>{
-                    const {name,checked} = e.target
-                    if (checked) {
-                      setSelectedTypes((prev)=>[...prev,name])
-                    } else {
-                      setSelectedTypes((prev) => prev.filter((t)=> t!==name))
-                    }
-                  }}
-                />
-                <label htmlFor={`filter-${subcategory}`}>
-                  {subcategory[0].toUpperCase() + subcategory.slice(1)}
-                </label>
-              </div>
-            ))}
-            </>
-          )}
-
-          {selectedCategories.includes("furniture") && (
-            <>
-              <p>Category:</p>
-              {["Chair", "Table", "Armchair"].map((subcategory) => (
+          {(
+            selectedCategories.length === 0 
+              ? Object.keys(subcategoriesMap) 
+              : selectedCategories
+          ).map((category) => (
+            <div key={category}>
+              <h3>{category[0].toUpperCase() + category.slice(1)}</h3>
+              {subcategoriesMap[category].map((subcategory) => (
                 <div key={subcategory}>
                   <input
                     className="checkbox"
@@ -72,52 +54,20 @@ const Navigation = ({
                     name={subcategory}
                     id={`filter-${subcategory}`}
                     checked={selectedTypes.includes(subcategory)}
-                    onChange={(e)=>{
-                      const {name,checked} = e.target
-                      if (checked) {
-                        setSelectedTypes((prev)=>[...prev,name])
-                      } else {
-                        setSelectedTypes((prev) => prev.filter((t)=> t!==name))
-                      }
+                    onChange={(e) => {
+                      const { name, checked } = e.target
+                      setSelectedTypes((prev) =>
+                        checked ? [...prev, name] : prev.filter((t) => t !== name))
                     }}
                   />
-                  <label htmlFor={`filter-${subcategory}`}>
-                    {subcategory[0].toUpperCase() + subcategory.slice(1)}
-                  </label>
+                  <label htmlFor={`filter-${subcategory}`}>{subcategory}</label>
                 </div>
               ))}
-            </>
-          )}
-
-          {selectedCategories.includes("clothes") && (
-            <>
-              <p>Category:</p>
-              {["Hoody", "Jacket", "Jeans"].map((subcategory) => (
-                <div key={subcategory}>
-                  <input
-                    className="checkbox"
-                    type="checkbox"
-                    name={subcategory}
-                    id={`filter-${subcategory}`}
-                    checked={selectedTypes.includes(subcategory)}
-                    onChange={(e)=>{
-                      const {name,checked} = e.target
-                      if (checked) {
-                        setSelectedTypes((prev)=>[...prev,name])
-                      } else {
-                        setSelectedTypes((prev) => prev.filter((t)=> t!==name))
-                      }
-                    }}
-                  />
-                  <label htmlFor={`filter-${subcategory}`}>
-                    {subcategory[0].toUpperCase() + subcategory.slice(1)}
-                  </label>
-                </div>
-              ))}
-            </>
-          )}
+            </div>
+          ))}
         </div>
       )}
+
 
       {isProductsPage && (
         <div className="sort-container">
