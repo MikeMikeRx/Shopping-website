@@ -30,6 +30,7 @@ const Products = () => {
       setSelectedCategories([categoryFromQuery])
     } else {
       setSelectedCategories([])
+      setSelectedTypes([])
     }
 
   }, [location.search, setSelectedCategories])
