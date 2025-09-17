@@ -65,20 +65,25 @@ const Navigation = ({
         <div className="checkbox-container">
           <h2>Filter & Sort:</h2>
 
-          {["electronics", "clothes", "furniture"].map((category) => (
-            <div key={category}>
-              <input
-              className="checkbox" 
-              type="checkbox"
-              name={category}
-              id={`filter-${category}`}
-              checked={selectedCategories.includes(category)}
-              onChange={handleChange}
-              />
-              <label htmlFor={`filter-${category}`}>{category[0].toUpperCase() + category.slice(1)}              
-              </label>
-            </div>
-          ))}
+          {selectedCategories.includes("electronics") && (
+            <>
+            <h3>Electronics</h3>
+            {["Laptop", "Smarthone", "Smart Tv"].map((subcategory) => (
+              <div key={subcategory}>
+                <input
+                  className="checkbox" 
+                  type="checkbox" 
+                  name={subcategory}
+                  id={`filter-${subcategory}`}
+                  checked={selectedCategories.includes(subcategory)}
+                  onChange={handleChange}
+                />
+              </div>
+            ))}
+            </>
+          )}
+
+
         </div>
       )}
 
