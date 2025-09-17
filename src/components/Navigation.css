@@ -59,6 +59,30 @@
 
 
 /* Links */
+/* Category-links */
+.category-links{
+    margin-top: 10px;
+    margin-left: 10px;
+    color: black;
+    display: block;
+    font-size: 20px;
+    text-decoration: none;
+    list-style: none;
+}
+
+.category-links a{
+    color: black;
+    display: block;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.category-links a:hover{
+    transform: scale(1.05);
+    transition: all 0.2s;
+}
+
+/* Nav-links */
 .nav-list .active + .checkbox-container{
     display: block;
 }
@@ -72,9 +96,14 @@
 .nav-menu a{
     color: black;
     display: block;
-    margin-bottom: 25px;
+    margin-bottom: 10px;
     font-size: 20px;
     text-decoration: none;
+}
+
+.nav-menu a:hover{
+    transform: scale(1.05);
+    transition: all 0.2s;
 }
 
 
