@@ -98,7 +98,7 @@ const Navigation = ({
           {selectedCategories.includes("furniture") && (
             <>
               <h3>Furniture</h3>
-              {["chair", "table", "armchair"].map((subcategory) => (
+              {["Chair", "Table", "Armchair"].map((subcategory) => (
                 <div key={subcategory}>
                   <input
                     className="checkbox"
@@ -126,7 +126,7 @@ const Navigation = ({
           {selectedCategories.includes("clothes") && (
             <>
               <h3>Clothes</h3>
-              {["hoody", "jacket", "jeans"].map((subcategory) => (
+              {["Hoody", "Jacket", "Jeans"].map((subcategory) => (
                 <div key={subcategory}>
                   <input
                     className="checkbox"
@@ -134,7 +134,14 @@ const Navigation = ({
                     name={subcategory}
                     id={`filter-${subcategory}`}
                     checked={selectedTypes.includes(subcategory)}
-                    onChange={handleChange}
+                    onChange={(e)=>{
+                      const {name,checked} = e.target
+                      if (checked) {
+                        setSelectedTypes((prev)=>[...prev,name])
+                      } else {
+                        setSelectedTypes((prev) => prev.filter((t)=> t!==name))
+                      }
+                    }}
                   />
                   <label htmlFor={`filter-${subcategory}`}>
                     {subcategory[0].toUpperCase() + subcategory.slice(1)}
