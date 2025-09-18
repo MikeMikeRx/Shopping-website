@@ -30,6 +30,10 @@ const SharedLayout = () => {
     })
   }
 
+  const removeFromCart = (id) => {
+    setCart((prev) => prev.filter((item) => item.id !== id))
+  }
+
   useEffect(() => {
     const fetchData = async () => {
       try {
