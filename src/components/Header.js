@@ -2,7 +2,8 @@ import "./Header.css"
 import { useEffect, useState } from "react"
 import { useLocation, Link } from "react-router-dom"
 import { GiHamburgerMenu } from "react-icons/gi"
-import { SlBasket } from "react-icons/sl";
+import { FaBasketShopping } from "react-icons/fa6";
+
 
 const Header = ({ onMenuToggle, menuVisible }) => {
 
@@ -49,7 +50,7 @@ const Header = ({ onMenuToggle, menuVisible }) => {
 
     <div className="header-right">
       <Link to="/cart" className="cart-link">
-        <SlBasket />
+        <FaBasketShopping />
       </Link>
     </div>
 
