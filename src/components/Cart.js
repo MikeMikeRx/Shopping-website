@@ -6,7 +6,9 @@ const Cart = () => {
   if (cart.length === 0) return <p>Shopping Basket is empty</p>
 
   return (
-    <div>Card</div>
+    <section className="cart">
+      
+    </section>
   )
 }
 
