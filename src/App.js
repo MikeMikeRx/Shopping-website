@@ -12,6 +12,7 @@ const App = () => {
         <Route index element={ <Home /> }/>
         <Route path="products" element={ <Products /> }/>
         <Route path="productdetail/:productId" element={ <ProductDetail />}/>
+        <Route path="cart" element={ <ShoppingCart /> }/>
       </Route>
     </Routes>  
   </BrowserRouter>
