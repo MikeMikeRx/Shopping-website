@@ -14,6 +14,8 @@ const SharedLayout = () => {
   const [allProducts, setAllProducts] = useState([])
   const [error, setError] = useState("")
 
+  const[cart, setCart] = useState([])
+
   useEffect(() => {
     const fetchData = async () => {
       try {
