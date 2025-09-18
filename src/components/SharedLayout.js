@@ -26,6 +26,7 @@ const SharedLayout = () => {
           : item
         )
       }
+      return [...prev, {...product, quantity: 1}]
     })
   }
 
