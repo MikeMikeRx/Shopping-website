@@ -49,7 +49,9 @@ useEffect(() => {
         <h1 >AMAZING SHOP</h1>
 
         <div className="header-right">
-          
+          <Link to="/cart" className="cart-link">
+            <SlBasket />
+          </Link>
         </div>
 
   </header>
