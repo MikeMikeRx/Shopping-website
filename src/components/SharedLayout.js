@@ -83,7 +83,10 @@ const SharedLayout = () => {
                 selectedSort, 
                 setSelectedSort, 
                 allProducts,
-                error
+                error,
+                cart,
+                addToCart,
+                removeFromCart
               }}
             />
           </main>
