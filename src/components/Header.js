@@ -48,6 +48,10 @@ useEffect(() => {
     
         <h1 >AMAZING SHOP</h1>
 
+        <div className="header-right">
+          
+        </div>
+
   </header>
     
 }
