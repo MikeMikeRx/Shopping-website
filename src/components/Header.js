@@ -5,7 +5,7 @@ import { GiHamburgerMenu } from "react-icons/gi"
 import { FaBasketShopping } from "react-icons/fa6";
 
 
-const Header = ({ onMenuToggle, menuVisible }) => {
+const Header = ({ onMenuToggle, menuVisible, cart }) => {
 
   const [hide, setHide] = useState(false)
   const location = useLocation()
