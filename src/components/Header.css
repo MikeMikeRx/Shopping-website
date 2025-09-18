@@ -22,9 +22,15 @@
     left: 1200px;
 }
 
-.header-right h2{
-    margin-top: 7px;
+.header-right .text{
+    margin-top: 8px;
     margin-right: 10px;
+}
+
+.header-right .quantity{
+    font-size: 28px;
+    margin-top: 5px;
+    margin-left: 10px;
 }
 
 .cart-link{
