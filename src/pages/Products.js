@@ -13,7 +13,8 @@ const Products = () => {
     setSelectedTypes, 
     selectedSort, 
     allProducts, 
-    error 
+    error,
+    addToCart 
   } = useOutletContext()
 
   const [searchTerm,setSearchTerm] = useState("")
