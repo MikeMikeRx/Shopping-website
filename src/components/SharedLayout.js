@@ -13,8 +13,7 @@ const SharedLayout = () => {
   const [selectedSort, setSelectedSort] = useState("name_asc")
   const [allProducts, setAllProducts] = useState([])
   const [error, setError] = useState("")
-
-  const[cart, setCart] = useState([])
+  const [cart, setCart] = useState([])
 
   const addToCart = (product) => {
     setCart((prev) => {
@@ -59,7 +58,11 @@ const SharedLayout = () => {
 
   return (
     <div className="layout">
-      <Header onMenuToggle={handleMenuToggle} menuVisible={menuVisible}/>
+      <Header 
+        onMenuToggle={handleMenuToggle} 
+        menuVisible={menuVisible}
+        cart={cart}
+      />
       <div className="main-body-content">
         <Navigation 
           selectedCategories={selectedCategories}
