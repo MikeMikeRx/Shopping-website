@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route} from "react-router-dom"
 import Home from "./pages/Home"
 import Products from "./pages/Products"
 import ProductDetail from "./pages/ProductDetail"
+import ShoppingCart from "./pages/ShoppingCart"
 import SharedLayout from "./components/SharedLayout"
 
 const App = () => {
