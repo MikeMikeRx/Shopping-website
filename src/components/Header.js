@@ -2,6 +2,7 @@ import "./Header.css"
 import { useEffect, useState } from "react"
 import { useLocation, Link } from "react-router-dom"
 import { GiHamburgerMenu } from "react-icons/gi"
+import { SlBasket } from "react-icons/sl";
 
 const Header = ({ onMenuToggle, menuVisible }) => {
 
@@ -17,7 +18,6 @@ useEffect(() => {
       return
     }
 
-    
     if (location.pathname === '/products'){
     const currentScrollY = window.scrollY
 
