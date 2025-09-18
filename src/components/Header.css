@@ -16,28 +16,29 @@
 }
 
 .header-right{
-    display: flex;
     position: fixed;
     top: 10;
     left: 1200px;
 }
 
+.cart-link{    
+    display: flex;
+    /* display: block; */
+    text-decoration: none;
+    color: white;
+    font-size: 35px;
+}
+
 .header-right .text{
     margin-top: 8px;
     margin-right: 10px;
+    font-size: 25px;
 }
 
 .header-right .quantity{
     font-size: 28px;
     margin-top: 5px;
     margin-left: 10px;
-}
-
-.cart-link{
-    display: block;
-    text-decoration: none;
-    color: white;
-    font-size: 35px;
 }
 
 .cart-link:hover{

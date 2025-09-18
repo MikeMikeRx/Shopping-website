@@ -49,11 +49,11 @@ const Header = ({ onMenuToggle, menuVisible, cart }) => {
     <h1 >AMAZING SHOP</h1>
 
     <div className="header-right">
-      <h2 className="text">Basket</h2>
-      <Link to="/cart" className="cart-link">
+        <Link to="/cart" className="cart-link">
+        <h2 className="text">Basket</h2>
         <FaBasketShopping />
-      </Link>
-      <h2 className="quantity">{cart.length}</h2>
+        <h2 className="quantity">{cart.length}</h2>
+      </Link>      
     </div>
 
   </header>
