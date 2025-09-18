@@ -16,9 +16,15 @@
 }
 
 .header-right{
+    display: flex;
     position: fixed;
     top: 10;
-    left: 1250px;
+    left: 1200px;
+}
+
+.header-right h2{
+    margin-top: 7px;
+    margin-right: 10px;
 }
 
 .cart-link{
