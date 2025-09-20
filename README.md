@@ -1,4 +1,4 @@
-<span style="color:green">In progress ...</span>
+In progress ...
 
 # 🛍️ E-Commerce Frontend (React + Firebase)
 
@@ -24,7 +24,7 @@ It supports browsing, filtering, and sorting products, along with extra features
 - **Frontend:** React, React Router  
 - **State Management:** React hooks (`useState`, `useEffect`, `useContext`)  
 - **Backend/Database:** Firebase Firestore  
-- **Styling:** CSS / Tailwind (optional extensions)  
+- **Styling:** CSS
 - **Icons:** React Icons (`react-icons`)  
 
 ---
